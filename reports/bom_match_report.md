@@ -1,4 +1,4 @@
-> 溯源: Atlas scene-library @ `685749f`（run_match.sh 自动生成）
+> 溯源: Atlas scene-library @ `56836e0`（run_match.sh 自动生成）
 
 # BOM 场景匹配报告
 

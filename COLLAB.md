@@ -64,7 +64,7 @@ git push
 
 ## 仓库清单
 
-| 仓库 | 位置 | 主要操作机 |
-|------|------|-----------|
-| solution-vault | GitHub: w0odst0ck/solution-vault | 公司电脑 |
-| sim-lab | GitHub: w0odst0ck/sim-lab | 家用主机 |
+| 仓库 | 远端 | 本地目录 | 主要操作机 |
+|------|------|----------|-----------|
+| Atlas（方案馆） | github.com/w0odst0ck/Atlas | `D:\projects\solution-vault` | 公司电脑 |
+| Forge（仿真实验室） | github.com/w0odst0ck/Forge | `D:\projects\sim-lab` | 家用主机 |

@@ -30,9 +30,11 @@ Atlas/
 │   ├── schemas/        #   品类 schema（灯管/面板灯）
 │   └── matching_rules.toml
 ├── tech-plans/         # [知识] 技术方案沉淀
+│   ├── ROADMAP.md                # 三年技术路线图
+│   ├── tech-stack.md             # 技术栈选型
+│   ├── 4week-awakening.md        # 4周零硬件唤醒计划
 │   ├── bom-scene-engine.md       # BOM 场景匹配引擎方案
-│   ├── classroom_retrofit.md     # 教室灯智能化改造方案
-│   └── ROADMAP.md                # 三年技术路线图
+│   └── classroom_retrofit.md     # 教室灯智能化改造方案
 ├── collector/          # [工具] 采集器（公司电脑运行）
 ├── retrofit/           # [实践] 智能化改造（方法论/案例/方案）
 ├── plan/               # [学习] 学习路径

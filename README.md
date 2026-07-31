@@ -57,7 +57,8 @@ Atlas/
 做智能化改造方案：
   1. retrofit/README.md → 改造总纲
   2. retrofit/learning-roadmap.md → 学习路线
-  3. scene-library/scenes/ → 场景定义（引擎输入）
+  3. plan/courses.md → 知识栈学习路径（学什么/课程资料）
+  4. scene-library/scenes/ → 场景定义（引擎输入）
 
 跑仿真测试（家用主机）：
   1. git pull

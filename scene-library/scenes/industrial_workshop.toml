@@ -1,0 +1,97 @@
+[scene]
+id = "industrial_workshop"
+name = "工业厂房/车间"
+description = "生产车间照明，要求高光效、工业协议对接、分区分组精细控制"
+priority = "P0"
+
+[hard_constraints]
+
+[[hard_constraints.items]]
+field = "product_specs.efficacy.value"
+op = "gte"
+value = 150
+comment = "工业车间要求高光效 ≥150LM/W"
+
+[[hard_constraints.items]]
+field = "sensor_module.type"
+op = "ne"
+value = "none"
+comment = "需要感应器实现人车联动"
+
+[[hard_constraints.items]]
+field = "communication_module.protocols.industrial"
+op = "contains_any"
+value = ["modbus", "opc_ua"]
+comment = "需要至少支持一种主流工业协议接 BA 系统"
+
+[[hard_constraints.items]]
+field = "environment.temp_range.min"
+op = "lte"
+value = -10
+comment = "车间可能存在低温环境"
+
+[soft_scoring]
+
+[soft_scoring.dimensions.protocol_match]
+weight = 0.25
+comment = "工业协议匹配度"
+
+[soft_scoring.dimensions.protocol_match.scoring]
+type = "enum_match_count"
+field = "communication_module.protocols.industrial"
+ideal = ["modbus", "opc_ua", "siemens_plc", "mitsubishi_plc"]
+mapping = { modbus = 1.0, opc_ua = 1.0, siemens_plc = 0.8, mitsubishi_plc = 0.8 }
+mode = "sum_normalized"
+comment = "支持的工业协议越多越好，归一化到 0-1"
+
+[soft_scoring.dimensions.efficacy_match]
+weight = 0.20
+comment = "光效匹配度"
+
+[soft_scoring.dimensions.efficacy_match.scoring]
+type = "range"
+field = "product_specs.efficacy.value"
+ideal_min = 160
+ideal_max = 999
+slope = 20
+
+[soft_scoring.dimensions.communication_match]
+weight = 0.20
+comment = "通信方式匹配"
+
+[soft_scoring.dimensions.communication_match.scoring]
+type = "enum_intersect"
+field = "communication_module.downlink"
+ideal = ["rs-485", "ethernet"]
+mapping = { rs_485 = 1.0, ethernet = 1.0, lora = 0.6, zigbee = 0.5 }
+mode = "max"
+
+[soft_scoring.dimensions.sensor_match]
+weight = 0.15
+comment = "传感器匹配"
+
+[soft_scoring.dimensions.sensor_match.scoring]
+type = "enum_exact"
+field = "sensor_module.type"
+mapping = { "radar_5.8G" = 1.0, "radar_10G" = 1.0, microwave = 0.8, pir = 0.4 }
+
+[soft_scoring.dimensions.zone_control_match]
+weight = 0.10
+comment = "分区控制匹配"
+
+[soft_scoring.dimensions.zone_control_match.scoring]
+type = "feature_check"
+field = "control_module.features"
+required_features = ["zone_grouping", "neighbor_group_config"]
+score_all = 1.0
+score_partial = 0.5
+
+[soft_scoring.dimensions.environment_match]
+weight = 0.10
+comment = "环境适应性匹配"
+
+[soft_scoring.dimensions.environment_match.scoring]
+type = "ip_minimum"
+field = "environment.ip_ratings"
+minimum_ip = "IP54"
+score_per_level_above = 0.05

@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">	
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<meta name="description" content="摘要：应急疏散照明是急救照明。故障停电失去正常照明和发生火灾自动停止正常照明时，应急照明能为人员疏散、灭火工作、不能立即停止须作暂短处理的工作以及黑暗环境中易发生事故的场所提供短时和紧急照明的措施。应">
+		<meta name="keywords" content="智能照明,应急疏散,智能疏散系统">
+		<title>多层和高层建筑应急疏散照明的设计与应用 安科瑞 许敏</title>	
+		<link rel="stylesheet" type="text/css" href="https://webstorage.eepw.com.cn/css/2025/space/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="https://webstorage.eepw.com.cn/css/2025/space/css/header20260309.css">
+		<link rel="stylesheet" type="text/css" href="https://webstorage.eepw.com.cn/css/2025/space/css/news_new_20260324.css">
+		<link rel="stylesheet" type="text/css" href="https://webstorage.eepw.com.cn/css/2025/space/css/comment_new_20260209.css">
+		<link rel="stylesheet" type="text/css" href="https://webstorage.eepw.com.cn/css/2025/space/css/newsdetail_20260228.css">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script type="text/javascript" src="https://webstorage.eepw.com.cn/css/2014/login/js/jquery-1.11.0.js"></script>
+<script src="https://webstorage.eepw.com.cn/css/2025/space/js/header_2026.js"></script>
+	
+
+	</head>
+<!--访问统计开始-->
+<script language="JavaScript">
+<!--
+document.write("<script language='JavaScript' src='https://www.eepw.com.cn/news/spacevisitlog/articleid/317093'></script>");
+//-->
+</script>
+<!--访问统计结束-->
+	<body>
+<!--nav begin	-->	
+<nav id="mainNav" class="nav navbar navbar-default newsdetail_top_new" style="z-index:300; padding-top:5px;">
+			<div class="container_menu_top">
+				<a href="#" class="hc-logobox" style="float:left!important; margin-left:20px; margin-right:30px;">
+					<img src="https://www.eepw.com.cn/event/action/images/logo_eepw.png" class="news_detail_logonew">
+				</a>				
+				<div id="oiBtn" class="hc-oi p1100">
+					<em></em>
+				</div>
+                <div class="loginbox">
+					<iframe style="float:right;" width="160" frameborder="0" allowtransparency="true" height="30" scrolling="No" src="https://passport.eepw.com.cn/auth/publiclogin2015/type/2015"></iframe>
+				</div>
+				<ul id="navBox" class="nav navbar-nav navbar-right news_detail_menu-navbox">										
+					<li>						
+						<a href="https://www.eepw.com.cn">首页</a>
+					</li>
+					<li>						
+						<a href="https://www.eepw.com.cn/news" target="_blank">每日头条</a>
+					</li>
+					
+                    <li>						
+						<a href="#">设计<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="topmenu_icon_new" ><g fill="none"><path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></a>
+                        <ul class="secondmenu1">
+                            <li><a href="https://www.eepw.com.cn/info/industry/special/embedded" target="_blank">嵌入式系统</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/component" target="_blank">元件/连接器</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/power" target="_blank">电源与新能源</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/safety" target="_blank">安防与国防</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/auto" target="_blank">汽车电子</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/eda" target="_blank">EDA/PCB</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/consume" target="_blank">消费电子</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/control" target="_blank">工业自动化</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/analog" target="_blank">模拟技术</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/medical" target="_blank">医疗电子</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/tm" target="_blank">测试测量</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/wireless" target="_blank">通信技术</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/led" target="_blank">光电显示</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/network" target="_blank">网络与存储</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/smart" target="_blank">智能计算</a></li>
+								<li><a href="https://www.eepw.com.cn/info/industry/special/iot" target="_blank">物联网与传感器</a></li>
+								<li><a href="https://www.eepw.com.cn/robot" target="_blank">机器人</a></li>
+                            <div class="clear"></div>
+                        </ul>
+					</li>
+					<li>						
+						<a href="http://seminar.eepw.com.cn" target="_blank">在线研讨会</a>
+					</li>
+					<li>						
+						<a href="#">资源<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="topmenu_icon_new" ><g fill="none"><path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></a>
+                        <ul class="secondmenu2">
+							<li><a href="http://v.eepw.com.cn" target="_blank">EETV</a></li>
+							<li><a href="http://edu.eepw.com.cn" target="_blank">培训</a></li>
+							<li><a href="https://diagram.eepw.com.cn" target="_blank">电子方案</a></li>
+							<li><a href="https://share.eepw.com.cn" target="_blank">资料下载</a></li>
+                            <div class="clear"></div>
+                        </ul>
+					</li>
+                    <li>						
+						<a href="#">技术汇<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="topmenu_icon_new" ><g fill="none"><path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></a>
+                        <ul class="secondmenu3">
+							<li><a href="http://ec.eepw.com.cn/center/index/userid/38768" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/PI.png" class="tech_area_new" /></em><span>PI技术专区</span></a></li>
+							<li><a href="http://ec.eepw.com.cn/mfmember/index/userid/42160" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/ADI.png" class="tech_area_new" /></em><span>ADI技术专区</span></a></li>
+							<li><a href="http://ec.eepw.com.cn/center/index/userid/40642" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/Maxim2.png" class="tech_area_new" /></em><span>美信技术专区</span></a></li>
+							<li><a href="http://ec.eepw.com.cn/center/index/userid/40874" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/advantech.png" class="tech_area_new" /></em><span>研华技术专区</span></a></li>
+                            <div class="clear"></div>
+							<li><a href="http://ec.eepw.com.cn/center/index/userid/40407" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/burnon.png" class="tech_area_new" /></em><span>贝能技术社区</span></a></li>
+							<li><a href="http://ec.eepw.com.cn/center/index/userid/40461" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/FLUKE.png" class="tech_area_new" /></em><span>Fluke技术社区</span></a></li>
+							<li><a href="http://ec.eepw.com.cn/center/index/userid/38503" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/XILINX.png" class="tech_area_new" /></em><span>ZYNQ技术社区</span></a></li>								
+							<li><a href="http://ec.eepw.com.cn/center/index/userid/41041" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/SEKORM.png" class="tech_area_new" /></em><span>世强专区技术社区</span></a></li>
+                            <div class="clear"></div>
+							<li><a href="http://ec.eepw.com.cn/center/index/userid/40398" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/MICROCHIP.png" class="tech_area_new" /></em><span>Microchip资源专区</span></a></li>
+							<li><a href="http://www.eepw.com.cn/event/action/Microchip/index.html" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/MICROCHIP.png" class="tech_area_new" /></em><span>Microchip视频专区</span></a></li>				
+							<li><a href="http://quark.eepw.com.cn" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/intelQuark.png" class="tech_area_new" /></em><span>Quark技术社区</span></a></li>
+							<li><a href="http://xilinx.eepw.com.cn/" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/XILINX.png" class="tech_area_new" /></em><span>Xilinx社区</span></a></li>	
+                            <div class="clear"></div>
+							<li><a href="http://ec.eepw.com.cn/center/index/userid/41379" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/Mouser.png" class="tech_area_new" /></em><span>MultiSIM BLUE</span></a></li>
+							<li><a href="http://ec.eepw.com.cn/center/index/userid/41442" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/Andes.png" class="tech_area_new" /></em><span>Andes专区</span></a></li>
+							<li><a href="http://ec.eepw.com.cn/center/index/userid/41617" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/telogo.jpg" class="tech_area_new" /></em><span>TE金属混合保护专区</span></a></li>
+							<li><a href="http://www.eepw.com.cn/event/action/adi_video/index.html " target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/ADI.png" class="tech_area_new" /></em><span>ADI视频专区</span></a></li>
+                            <div class="clear"></div>
+							<li><a href="http://www.eepw.com.cn/openvino" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/openvino.jpg" class="tech_area_new" /></em><span>OpenVINO生态社区</span></a></li>
+							<li><a href="http://ec.eepw.com.cn/center/index/userid/43462" target="_blank"><em><img src="https://webstorage.eepw.com.cn/css/2013/article/headerImg/logo_mornsun.jpg" class="tech_area_new" /></em><span>金升阳电源技术专区</span></a></li>
+                            <div class="clear"></div>
+							<li><a href="https://www.eepw.com.cn/tech/s/k/led" target="_blank">Led技术社区</a></li>
+							<li><a href="https://www.eepw.com.cn/tech/s/k/dsp" target="_blank">DSP技术社区</a></li>	
+							<li><a href="https://www.eepw.com.cn/tech/s/k/fpga" target="_blank">FPGA技术社区</a></li>
+							<li><a href="https://www.eepw.com.cn/tech/s/k/mcu" target="_blank">MCU技术社区</a></li>
+							<li><a href="https://www.eepw.com.cn/tech/s/k/usb" target="_blank">USB技术社区</a></li>
+							<li><a href="https://www.eepw.com.cn/tech/s/k/cpld" target="_blank">CPLD技术社区</a></li>
+							<li><a href="https://www.eepw.com.cn/tech/s/k/zigbee" target="_blank">Zigbee技术社区</a></li>
+							<li><a href="https://www.eepw.com.cn/tech/s/k/labview" target="_blank">Labview技术社区</a></li>
+							<li><a href="https://www.eepw.com.cn/tech/s/k/arduino" target="_blank">Arduino技术社区</a></li>
+							<li><a href="https://www.eepw.com.cn/tech/s/k/示波器" target="_blank">示波器技术社区</a></li>
+							<li><a href="https://www.eepw.com.cn/tech/s/k/步进电机" target="_blank">步进电机技术社区</a></li>
+							<li><a href="https://www.eepw.com.cn/tech/s/k/无线充电" target="_blank">无线充电技术社区</a></li>
+							<li><a href="https://www.eepw.com.cn/tech/s/k/人脸识别" target="_blank">人脸识别技术社区</a></li>
+							<li><a href="https://www.eepw.com.cn/tech/s/k/指纹识别" target="_blank">指纹识别技术社区</a></li>
+                        </ul>
+					</li>
+					<li>						
+						<a href="#">互动社区<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="topmenu_icon_new" ><g fill="none"><path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg></a>
+                        <ul class="secondmenu2">
+							<li><a href="https://forum.eepw.com.cn" target="_blank">论坛</a></li>
+							<li><a href="https://forum.eepw.com.cn/board" target="_blank">开发板试用</a></li>
+							<li><a href="http://spaces.eepw.com.cn" target="_blank">博客</a></li>
+							<li><a href="https://www.eepw.com.cn/activity/act" target="_blank">活动中心</a></li>
+							<li><a href="https://passport.eepw.com.cn/prize" target="_blank">积分礼品</a></li>			
+                            <div class="clear"></div>
+                        </ul>
+					</li>
+					
+                    <li class="auto_small_list">
+                            <div class="auto_m_menu"><p><strong>技术应用</strong></p>
+                            <span><a href="https://www.eepw.com.cn/auto">汽车电子</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/embedded">嵌入式系统</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/analog">模拟技术</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/power">电源与新能源</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/component">元件/连接器</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/wireless">手机与无线通信</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/network">网络与存储</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/led">光电显示</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/eda">EDA/PCB</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/control">工控自动化</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/consume">消费电子</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/medical">医疗电子</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/iot">物联网与传感器</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/tm">测试测量</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/safety">安全与国防</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/list/special/smart">智能计算</a></span>
+                                <span><a href="https://www.eepw.com.cn/robot">机器人</a></span>
+                            <div class="auto_border_b"></div>
+                            </div>
+                            <div class="auto_m_menu"><p><strong>EEPW</strong></p>
+                                <span><a href="https://forum.eepw.com.cn">论坛</a></span>
+                                <span><a href="https://forum.eepw.com.cn/board">开发板试用</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/diagramindex">电子设计方案</a></span>
+                                <span><a href="http://spaces.eepw.com.cn">博客</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/seminarindex">在线研讨会</a></span>
+                                <span><a href="http://v.eepw.com.cn">EETV</a></span>
+                                <span><a href="https://m.eepw.com.cn/m/sharemindex">白皮书</a></span>
+                                <div class="auto_border_b"></div>
+                            </div>
+
+
+
+                    </li>
+                    <li class="auto_small_list0"></li>
+					<li>						
+						<a href="https://passport.eepw.com.cn/user/datalist" target="_blank"><font color="#cc0000">资料库</font></a>
+					</li>
+																			
+				</ul>
+                <div class="news_newloginbox">
+					<iframe style="float:right;" width="215" frameborder="0" allowtransparency="true" height="30" scrolling="No" src="https://passport.eepw.com.cn/auth/publiclogin2015/type/2015"></iframe>
+				</div>
+                <div class="hSearch">
+		    <form target="_blank" action="https://so.eepw.com.cn/search/s" method="post" id="TsearchBox">
+		      <input class="sBox" name="k" id="searchWord" placeholder="输入技术关键词" type="text">
+		      <input name="t" value="6" type="hidden">
+		      <input class="topSearchBtn" value="" type="submit">
+		    </form>
+  		</div>
+			</div>
+	</nav>
+<!--nav end-->
+<!--main begin-->
+	<div class="news_detail_newad1">
+		<!--/* Afinal44-2  */-->
+            <iframe id='a5e7bdf8' name='a5e7bdf8' src='https://ad.eepw.com.cn/www/delivery/afr.php?zoneid=89&amp;cb=INSERT_RANDOM_NUMBER_HERE' frameborder='0' scrolling='no' width='1000' height='75'><a href='https://ad.eepw.com.cn/www/delivery/ck.php?n=a4c46fa4&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='https://ad.eepw.com.cn/www/delivery/avw.php?zoneid=89&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a4c46fa4' border='0' alt='' /></a></iframe>
+	</div>
+	<div class="news_detail_newad0"></div>
+
+		<div class="container" style="margin-top: 20px;">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 news_detail_posision_line">
+				<div class="news_detail_new_position ">
+				<h1>专栏中心</h1>
+				<span><a href="https://www.eepw.com.cn" target="_blank">EEPW首页</a> > <a href="http://spaces.eepw.com.cn/" target="_blank">专栏</a> > 多层和高层建筑应急疏散照明的设计与应用 安科瑞 许敏</span>
+				</div>
+				</div>
+                <div class="clear">
+<!-- 文字链 begin-->	
+	<script src="https://forum.eepw.com.cn/jscontent/wenzilian2026" type="text/javascript"></script>	
+<!-- 文字链 end-->
+                </div>
+<!--main left begin-->
+  <div class="col-md-8 col-sm-12 newspart">
+    <div class="row lparttit">
+      <div  id="div_news">
+	  <div class="scrolldoorFrame ">
+	  	<div class="newsdetail_20260228">
+          <h1>多层和高层建筑应急疏散照明的设计与应用 安科瑞 许敏</h1>
+          <div class="news_authorTimeSource">
+				<span>发布人：<a href="http://spaces.eepw.com.cn/space/1686111804" rel="nofollow" target="_blank" style="color:#ACACAC">xumin123</a></span>
+				<span>时间：2023-07-20</span>
+				<span>来源：工程师</span>
+
+				<span class="news_detail_techqunnew">
+				<div class="nav0">
+				  <ul>
+				    <li><a href="javascript:void(0);"><img src="http://www.eepw.com.cn/event/action/images/icon_add_4.png" width="20" border="0" align="absmiddle">加入技术交流群</a>
+				        <ul>
+				            <li style="text-align:center;"><img src="https://www.eepw.com.cn/event/company/images/code_1.jpg" width="130"><br>扫码加入<br>和技术大咖面对面交流<br>海量资料库查询</li>
+				        </ul>
+				    </li>
+				  </ul>
+				</div>
+				</span>
+				<span class="news_detail_fabu_new"><a href="http://spaces.eepw.com.cn/expert/publish/" rel="nofollow" class="f_white" target="_blank">发布文章</a></span>
+			</div>
+            <div class="news_detail_newad2">
+            	<!-- 广告位：Afinal20a-2 -->
+				<iframe id='a890e388' name='a890e388' src='https://ad.eepw.com.cn/www/delivery/afr.php?zoneid=88&amp;cb=INSERT_RANDOM_NUMBER_HERE' frameborder='0' scrolling='no' width='660' height='60'><a href='https://ad.eepw.com.cn/www/delivery/ck.php?n=a635e61e&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='https://ad.eepw.com.cn/www/delivery/avw.php?zoneid=88&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a635e61e' border='0' alt='' /></a></iframe>
+			</div>
+            <div class="newsdetail_conten">
+            	<p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px"><strong style=";padding: 0px;list-style-type: none;box-sizing: border-box"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">摘要：</span></strong><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">应急疏散照明是急救照明。故障停电失去正常照明和发生火灾自动停止正常照明时，应急照明能为人员疏散、灭火工作、不能立即停止须作暂短处理的工作以及黑暗环境中易发生事故的场所提供短时和紧急照明的措施。应急照明是容易被人们遗忘的照明。因为故障停电和火灾很少发生，因此应急照明也很少使用，长期不使用，就很容易被人忘记。应急照明关系到人们生命财产的安全，关系到经济损失和社会影响。在这里对应急疏散照明的设计方案作深入了解、提出了一些想法和解决方式。文中描述的应急照明都为应急疏散照明。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px"><strong style=";padding: 0px;list-style-type: none;box-sizing: border-box"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">关键词：</span></strong><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">应急疏散照明；应急疏散指示牌；高层建筑。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">&nbsp;</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px"><strong style=";padding: 0px;list-style-type: none;box-sizing: border-box"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 黑体;line-height: 28px;font-size: 19px">0 引言</span></strong></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">一般设计院设计依据规范规定，多层和高层建筑的楼梯间及其前室、消防电梯间及其前室、合用前室和避难层（间）、公共建筑内的疏散走道和居住建筑内走道长度超过</span>20m的内走道都应装设应急疏散照明及应急疏散指示牌（包括安全出口指示牌和疏散方向指示牌）。详细设置要求见JGJ16-2008民用建筑电气设计规范第13.8.3条，GB50016-2014建筑设计防火规范第10.3条。在原有常规的设计方案上是否可以优化的更加合理与安全，在此讨论新的应急疏散照明设计方案。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px"><strong style=";padding: 0px;list-style-type: none;box-sizing: border-box"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 黑体;line-height: 28px;font-size: 19px">1 具体项目讨论</span></strong></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">应急疏散照明及应急疏散指示牌如何设置，设计人员常用的设计方案有以下两种：</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>1）走道和前室：应急疏散照明灯具采用与正常照明相同的灯具（嵌装筒灯或者吸顶灯），统一均匀布置。但是供电回路分开，应急疏散照明灯具的应急电源采用灯具自带电池或者集中电池（EPS）供电，应急疏散照明灯具回路中设控制开关，便于控制。楼梯间：设置应急疏散照明灯具（一般采用吸顶灯，平时作正常照明灯具使用），灯具的应急电源可采用与“走道和前室”相同的供电模式。走道上的疏散方向指示牌在走道的侧面墙上安装。依据规范规定：高度≤1m，间距≤20m。各安全出口的上方安装安全出口指示牌，如图1所示。</span></p><p style="margin-top: 0px;margin-bottom: 0px;margin-left: 42px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px;text-align: center"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">&nbsp;</span><img src="http://net1.acrel.cn/article/common/upload/2020/10/30/14236t9.png" alt="" /></p><p style="margin-top: 0px;margin-bottom: 0px;margin-left: 28px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>2） 走道、楼梯和前室：应急疏散照明灯具全部采用双头灯，安装在侧面墙上。高度在2m左右。应急疏散指示牌的布置同方案一,如图2所示。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px;text-align: center"><img src="http://net1.acrel.cn/article/common/upload/2020/10/30/1425784.png" alt="" /></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">方案一是设计人员常用并且也是比较合理的方案。但也存在不足：应急灯具与一般灯具外形可以相同，而其要求更高。如应急灯具要求灯具的外壳氧指数</span>≥28的阻燃材料；灯具内部连线耐温≥105°C的导线。设计人员往往忽略了这一点，设计中没有提出这些要求。从而使应急灯具没有达到应有的要求。另外应急灯具安装在顶部，光从顶部射下来，如果发生火灾产生大量烟雾时，则遮挡了部分光线，降低了地面照度。如果顶部是吊平顶，由于火灾发生倒塌时，则顶部的应急灯具被破坏，从而失去应急照明。同时在火灾时需考虑应急疏散灯具强制点亮，开关无论在何种状态，灯具都能点亮，增加了电气系统的复杂性，在可靠性上略有欠缺，同时增加检修的工作量及电线电缆管线投入的造价。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">方案二也是设计人员常用的方案。应急照明的布置与正常照明没有关系。不用配合正常照明设计</span>,可独立布置应急照明。但是与方案一比较，多设置了一套灯具，不但增加了投资，而且影响环境的美观，往往室内设计师和业主反对这种做法。如果双头灯的位置不妥当，对逃生人员易产生眩光。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px"><strong style=";padding: 0px;list-style-type: none;box-sizing: border-box"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 黑体;line-height: 28px;font-size: 19px">2 优化设计方案</span></strong></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">为了优化应急疏散照明的设计，笔者设想了方案三，如图</span>3所示。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px;text-align: center"><img src="http://net1.acrel.cn/article/common/upload/2020/10/30/14314oy.png" alt="" /></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">该方案的应急照明灯具既不采用顶灯，也不采用高位安装的壁灯（双头灯）。而是采用低位安装的、与疏散方向指示牌相结合的方向指示照明壁灯以及与安全出口指示牌相结合的安全出口照明壁灯。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px;text-align: center"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">方向指示照明壁灯安装高度可在</span>0.5~1.0m之间。方向指示照明壁灯的上半部分作疏散方向指示牌。面板尺寸、表面亮度、表面的图案和色彩完全按照规范要求制作。灯具的下半部分作应急照明之用。由于灯具安装在低位墙壁上，离地面比较近，投照范围不大，所以照明灯具间距的要求为5~8m较佳，即两个疏散方向指示牌相结合的方向指示照明壁灯之间再增加一个低位应急照明灯带，满足地面应急照度的均匀度。因LED光源光效高，应急照度要求不高（低应急照度1.0lx），体积小，所以疏散方向指示牌上增加应急LED灯带不会造成厚度过厚，如图4所示。</span><img src="http://net1.acrel.cn/article/common/upload/2020/10/30/14539xe.png" alt="" /></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">低位应急照明灯的设计实际为一个应急照明壁灯，安装高度与应急疏散指示牌照明</span>--致,阻燃材料一致，灯具上方加一灯罩，防止灯光向上照射而产生炫光，不利于逃生，如图5所示。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;text-align: center;line-height: 24px"><img src="http://net1.acrel.cn/article/common/upload/2020/10/30/14647nb.png" alt="" /></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">以上灯具因考虑是下侧斜照投射灯光，为表达清楚照射方向，做以下简易配光曲线，如图</span>6所示。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">全出口照明壁灯明装于墙上，正面作安全出口指示牌。面板尺寸、表面亮度、表面的图案和色彩完全按照规范要求制作。灯具的正下面采用</span>LED灯带作应急照明之用，如图7所示。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">有个别场所需安装吊装式标志照明灯具。面板尺寸、表面亮度、表面的图案和色彩完全按照规范要求制作。灯具的正下面采用</span>LED灯带作应急照明之用，如图8所示。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-align: center;line-height: 24px">&nbsp;</p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-align: center;line-height: 24px"><img src="http://net1.acrel.cn/article/common/upload/2020/10/30/14727f0.png" alt="" /></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-align: center;line-height: 24px"><img src="http://net1.acrel.cn/article/common/upload/2020/10/30/14813ti.png" alt="" /></p><p style="margin: 5px 0 0px 83px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-indent: 0;text-wrap: wrap;text-align: center">&nbsp;</p><p style="margin: 5px 0 0px 83px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-indent: 0;text-wrap: wrap;text-align: center"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;font-size: 11px;position: relative;top: -1px">&nbsp;</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 黑体;line-height: 28px;font-size: 19px">3 新方案的优缺点与设计工艺要求</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">3.1该方案三的优点</span><strong style=";padding: 0px;list-style-type: none;box-sizing: border-box"></strong></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>1）灯具没有设在顶部（从方案三~图8），不会受烟雾遮挡而降低照度，也不会由于火灾时平顶倒塌而破坏应急灯具；</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>2）墙上没有设置明露的双头灯，不影响环境的美观；</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">方向指示照明壁灯低位安装，离地面比较近，可用较小功率壁灯满足地面需要的照度。也不会对逃生人员产生眩光；</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>4）安全出口照明壁灯下侧照明，增加了安全出口的亮度，使安全出口更加明显；</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>5）设计与检修更加方便；</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>6）方向指示照明壁灯低位安装，发生火灾时，被火烧的可能性比较小，增加了应急照明的可靠性，并且应急电源可采用集中电源供电（EPS）；</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>7）灯具满足消防阻燃材料的要求；</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>8）减少了电线电缆管线的投入造价。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><strong style=";padding: 0px;list-style-type: none;box-sizing: border-box"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">3.2该方案三的不足</span></strong><strong style=";padding: 0px;list-style-type: none;box-sizing: border-box"></strong></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>1）因灯具安装高度有限，引起照射范围缩小，为了满足照度均匀度要求，需增加疏散指示灯具数量；</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>2）此灯具的使用场所有一定限制，不是适合所有场所；</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>3）在原有应急疏散指示牌造价的基础上增加部分投资。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">3.3对于应急疏散指示牌照明灯具的要求</span><strong style=";padding: 0px;list-style-type: none;box-sizing: border-box"></strong></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>1）应急灯具下端尺寸的厚度应该会比通常所见应急疏散指示灯具厚1~2cm；</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>2）要求灯具的总光通量在150~200lm，一般LED器件的发光效率在100lm/W,因考虑灯具的整灯效率，所以需配3W~4W的LED灯带；</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>3）从以上图3结合图6可以得出结论，对于配光需考虑采用“宽配光+斜照型”[4]；</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">（</span>4）对于此灯具的上端应急疏散指示牌为持续式照明，下端LED应急灯带为非持续式照明。在接线时灯具内需多配置一个为下端应急LED灯带的触发点，用作火灾时强制点亮，同时消防控制室能统一控制应急灯具的开启与关闭。一旦外部失电，疏散指示牌（箭头）和应急照明（LED带灯）也能一起自动点亮，此功能可以考虑采用数字电路里的与或非逻辑功能就能实现。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 黑体;line-height: 28px;font-size: 19px">4&nbsp;</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 黑体;line-height: 28px;font-size: 19px">安科瑞智能照明及疏散系统功能及选型</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 20.8px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 18.2px;font-size: 14px">4.1</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 18.2px;font-size: 14px">系统简介</span></p><p style="margin-top: 0px;margin-right: 0;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 20.8px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 18.2px;font-size: 14px">消防应急照明和疏散指示系统配合火灾报警控制器的使用，在火灾时刻，能够准确给出好的疏散路径指示，智能打开消防应急标志灯的指示方向以及应急照明灯，帮助建筑内的人群选择逃生疏散路线，指引逃生方向，保障群众的人身安全，为各商家担心的安全问题解决了后顾之忧。该系统主要应用于机场、轨道交通、隧道、客运枢纽、医院、学校、体育馆、展览馆、酒店、好的商业楼盘等场所。</span></p><p style="margin-top: 0px;margin-right: 0;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 20.8px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 18.2px;font-size: 14px">&nbsp;</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">4.2</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">系统功能</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">安科瑞的</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">智能疏散系统</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">由</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">三层网络结构。一层：智能疏散主机；二层：区域应急照明配电箱；三层：疏散指示标志灯具</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">，</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px"><span style="font-family:宋体">其具体结构形式如图</span>1所示。</span></p><p style="margin-top: 0px;margin-right: 0;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 28px;text-align: center;line-height: 20.8px"><img src="http://net1.acrel.cn/article/common/upload/2020/10/30/14847uj.png" alt="" /></p><p style="margin-top: 0px;margin-bottom: 0px;margin-left: 0;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 27px;line-height: 20.8px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;font-size: 14px">①　</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 18.2px;font-size: 14px"><span style="font-family:宋体">联动报警功能</span>——控制器能与火灾自动报警系统联动，发生火灾时，自动接收火灾报警系统的信息，并发出声光报警信号，同时显示屏指示报警地点，记录报警时间，声音报警将一直保持，直至点击“消音”按钮实现消音。</span></p><p style="margin-top: 0px;margin-bottom: 0px;margin-left: 0;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 27px;line-height: 20.8px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;font-size: 14px">②　</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 18.2px;font-size: 14px"><span style="font-family:宋体">系统监控功能</span>——控制器可对系统内部的所有组件工作状态进行24小时监控，实时检测其工作状态是否正常，包括集中电源、灯具。</span></p><p style="margin-top: 0px;margin-bottom: 0px;margin-left: 0;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 27px;line-height: 20.8px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;font-size: 14px">③　</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 18.2px;font-size: 14px"><span style="font-family:宋体">故障报警功能</span>——当系统组件之间的通讯线或电源线发生短路、断路故障时，控制器会发出声光报警信号，并在显示屏上指示故障发生时间、故障设备、故障类型以及故障区域。</span></p><p style="margin-top: 0px;margin-bottom: 0px;margin-left: 0;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 27px;line-height: 20.8px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;font-size: 14px">④　</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 18.2px;font-size: 14px"><span style="font-family:宋体">自检功能</span>——自动检查控制器中所有状态指示灯、显示屏、喇叭、打印机是否正常。自检功能分为常规自检、月检和年检，定期检查电路故障，去掉隐患。常规自检方式为所有指示灯闪亮、显示器、音响器件发声；月检方式为上电48h后，每隔30天应急工作30~180秒；年检方式为每年应急工作时间不少于30min。</span></p><p style="margin-top: 0px;margin-bottom: 0px;margin-left: 0;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 27px;line-height: 20.8px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;font-size: 14px">⑤　</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 18.2px;font-size: 14px"><span style="font-family:宋体">备电功能</span>——内置备用电源，主电源供电不足时，备电源自动切换，切换过程中系统保持平稳运行状态，可以保证系统可靠运行，且备用电源至少保证应急照明控制器正常工作3h。</span></p><p style="margin-top: 0px;margin-bottom: 0px;margin-left: 0;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 27px;line-height: 20.8px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;font-size: 14px">⑥　</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 18.2px;font-size: 14px"><span style="font-family:宋体">记录存储与查询功能</span>——当系统发生应急启动、故障等事件时，控制器能自动记录事件类型，事件发生时间，事件发生区域以及事件的详细信息，可在日志记录中自定义查询日期及范围，控制器能存储事件记录超过10000条。</span></p><p style="margin-top: 0px;margin-bottom: 0px;margin-left: 0;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 27px;line-height: 20.8px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;font-size: 14px">⑦　</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 18.2px;font-size: 14px"><span style="font-family:宋体">导光流功能</span>——控制器可通过软件界面设置灯具顺序闪亮的频率，2～32Hz可设。</span></p><p style="margin-top: 0px;margin-bottom: 0px;margin-left: 0;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-indent: 27px;line-height: 20.8px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;font-size: 14px">⑧　</span><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 18.2px;font-size: 14px"><span style="font-family:宋体">权限控制功能</span>——为确保系统的运行，操作权限分为“管理员级别”、“操作员级别”和“值班员级别”三个级别，不同级别的操作员具有不同的操作权限。日常用户级：实时状态监视及操作、事件记录查询、监控模块远程复位；监控操作级：实时状态监视及操作、事件记录查询、监控模块远程复位、设备自检；系统管理级：实时状态监视、事件记录查询、终端远程复位、设备自检，控制器系统参数查询、控制器各模块单独检测、普通用户添加与删除。</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">4.3产品选型表</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-family: 宋体;line-height: 21px;font-size: 14px">控制器和集中电源选型表</span></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;line-height: 24px;text-align: center"><img src="http://net1.acrel.cn/article/common/upload/2020/11/10/837254s.png" alt="" /></p><p style="margin-top: 0px;margin-bottom: 0px;padding: 0px;list-style-type: none;box-sizing: border-box;font-family: &#39;Times New Roman&#39;;font-size: medium;text-wrap: wrap;text-align: center"><img src="http://net1.acrel.cn/article/common/upload/2020/11/10/837565i.png" alt="" /><img src="http://net1.acrel.cn/article/common/upload/2020/11/10/8387qp.png" alt="" /></p><p><strong style=";padding: 0px;list-style-type: none;box-sizing: border-box"><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;line-height: 28px;font-size: 19px">5 总结</span></strong><span style=";padding: 0px;list-style-type: none;box-sizing: border-box;font-size: 14px;text-indent: 28px">&nbsp; &nbsp; &nbsp; &nbsp; 应急疏散指示牌照明灯具方案三的构想还停留在理论上，还需专项研究机构、消防部门、消防应急灯具厂家以此方案为基础，作进一步讨论、深化设计及研发，能为大众的生命安全、经济与社会发展提供更大保障。</span></p><p><br /></p>            	<p style="color: #999;padding: 5px;background: #ececec;text-align: center;font-size: 12px;">专栏文章内容及配图由作者撰写发布，仅供工程师学习之用，如有侵权或者其他违规问题，请联系本站处理。 <a href="https://www.eepw.com.cn/event/company/contact.html" target="_blank">联系我们</a></p>
+            </div>
+      </div>
+<div class="hAd7">
+	<!-- 广告位：Afinal47 -->
+	<iframe id='a95aafe3' name='a95aafe3' src='https://ad.eepw.com.cn/www/delivery/afr.php?zoneid=119&amp;cb=INSERT_RANDOM_NUMBER_HERE' frameborder='0' scrolling='no' width='660' height='60'><a href='https://ad.eepw.com.cn/www/delivery/ck.php?n=ae6854a5&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='https://ad.eepw.com.cn/www/delivery/avw.php?zoneid=119&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ae6854a5' border='0' alt='' /></a></iframe>
+</div>
+      <div class="keyWordShare">
+        	<div class="col-md-12 col-sm-12">
+            	<div class="keyWord">
+                	<span>关键词：
+                				            <em>智能照明</em>
+                        <em>应急疏散</em>
+                        <em>智能疏散系统</em>
+                                    </span>
+                </div>
+           
+        </div>
+      </div>
+      <!-- 继续阅读-->
+<script src="https://forum.eepw.com.cn/jscontent/goonread2026/article" type="text/javascript"></script>	
+<!-- 相关推荐-->
+<div class="comment_new_20260209">
+	<div class="comment_new_title">
+	<h3>相关推荐</h3>
+	</div>
+	<div class="row auto_scroll">
+		<div class="col-md-3 col-xs-3 newspicbox"> <a href="https://www.eepw.com.cn/circuit/201504/123227.html" target="_blank"><img class="img-responsive" src="http://editerupload.eaw.com.cn/201103/23c811087e85f54874bcbe58cb062f74.jpg"></a></div>
+		<div class="newstxtbox col-md-9 col-xs-9">
+			<h3><a href="https://www.eepw.com.cn/circuit/201504/123227.html" target="_blank">智能照明平台解决方案</a></h3>
+			<!--下载 视频 新闻-->
+						<div class="newsbtm"> 
+				<span class="news_fenl"> 
+									<a href="https://diagram.eepw.com.cn">设计方案</a>
+								</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/c/k/%E7%91%9E%E8%90%A8%E7%94%B5%E5%AD%90">瑞萨电子</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/c/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/c/k/%E7%85%A7%E6%98%8E%E6%8A%80%E6%9C%AF">照明技术</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2015-04-01</span>
+			</div>
+		</div>
+	</div>
+	<div class="row auto_scroll">
+		<div class="newstxtbox col-md-12 col-xs-12 onlynewstxtbox">
+			<h3><a href="https://share.eepw.com.cn/share/download/id/194875" target="_blank">R_10013</a></h3>
+			  			<div class="newsintro hidden-xs hidden-sm">智能照明,JenNet-IP...</div>
+  			  			<div class="newsbtm onlytxt_newsbtm">  				
+				<span class="news_fenl"> 
+									<a href="https://share.eepw.com.cn">资源下载</a>
+								</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/s/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/JenNet-IP">JenNet-IP</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2014-12-30</span>
+  			</div>
+  			
+  		</div>
+  	</div>
+	<div class="row auto_scroll">
+		<div class="newstxtbox col-md-12 col-xs-12 onlynewstxtbox">
+			<h3><a href="https://forum.eepw.com.cn/thread/282929/1" target="_blank">erabbit申请试用Dragonboard 410c</a></h3>
+			  			<div class="newsbtm onlytxt_newsbtm">  				
+				<span class="news_fenl"> 
+									<a href="https://passport.eepw.com.cn/profile/post/u/601555">erabbit</a>
+								</span> 
+
+				<span class="hidden-sm hidden-xs">
+				  				</span> 
+				<span class="newstime">2016-09-27</span>
+  			</div>
+  			
+  		</div>
+  	</div>
+	<div class="row auto_scroll">
+		<div class="newstxtbox col-md-12 col-xs-12 onlynewstxtbox">
+			<h3><a href="http://www.eepw.com.cn/article/202601/477839.htm" target="_blank">芯科科技与涂鸦智能携手推出免编码AIoT智能照明创新开发平台</a></h3>
+			  			<div class="newsintro hidden-xs hidden-sm">对于许多消费者而言，智能照明帮助他们首次亲身体验到了互联技术所能创造的价值。如今，这类应用已远超简单的开关控制指令的范畴。该市场正向智能场景化系统演进，这些系统不仅能够提升能源效率，还可以改善用户生活及工作体验。从商业场...</div>
+  			  			<div class="newsbtm onlytxt_newsbtm">  				
+				<span class="news_fenl"> 
+														<a href="https://www.eepw.com.cn/info/industry/special/iot">物联网与传感器</a>
+													</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/s/k/%E8%8A%AF%E7%A7%91%E7%A7%91%E6%8A%80">芯科科技</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E6%B6%82%E9%B8%A6%E6%99%BA%E8%83%BD">涂鸦智能</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2026-01-21</span>
+  			</div>
+  			
+  		</div>
+  	</div>
+	<div class="row auto_scroll">
+		<div class="col-md-3 col-xs-3 newspicbox"> <a href="http://www.eepw.com.cn/article/202206/435188.htm" target="_blank"><img class="img-responsive" src="http://editerupload.eepw.com.cn/202206/1655266013402962.png"></a></div>
+		<div class="newstxtbox col-md-9 col-xs-9">
+			<h3><a href="http://www.eepw.com.cn/article/202206/435188.htm" target="_blank">大联大品佳集团推出基于MediaTek产品的Wi-Fi 6智能照明控制方案</a></h3>
+			<!--下载 视频 新闻-->
+						<div class="newsintro hidden-xs hidden-sm">致力于亚太地区市场的领先半导体元器件分销商---大联大控股宣布，其旗下品佳推出基于联发科（MediaTek）Filogic 130A的Wi-Fi 6智能照明控制方案。&nbsp;图示1-大联大品佳基于MediaTek产品...</div>
+						<div class="newsbtm"> 
+				<span class="news_fenl"> 
+														<a href="https://www.eepw.com.cn/info/industry/special/led">光电显示</a>
+													</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/s/k/Wi-Fi%206">Wi-Fi 6</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2022-06-15</span>
+			</div>
+		</div>
+	</div>
+	<div class="row auto_scroll">
+		<div class="newstxtbox col-md-12 col-xs-12 onlynewstxtbox">
+			<h3><a href="https://share.eepw.com.cn/share/download/id/389104" target="_blank">单灯控制器城市智能照明改造方案</a></h3>
+			  			<div class="newsintro hidden-xs hidden-sm">本项目采用单灯智能控制系统，每个路灯控制柜配置一套集中控制器，对应其控制的路灯均配有单灯终端控制器。路灯由路灯管理部分统一管理。道路照明采用智能化控制，通过计算机网络技术，利用有线或无线传输方式，对路灯的启闭、运行状态、...</div>
+  			  			<div class="newsbtm onlytxt_newsbtm">  				
+				<span class="news_fenl"> 
+									<a href="https://share.eepw.com.cn">资源下载</a>
+								</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/s/k/%E5%8D%95%E7%81%AF%E6%8E%A7%E5%88%B6%E5%99%A8">单灯控制器</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2021-10-27</span>
+  			</div>
+  			
+  		</div>
+  	</div>
+	<div class="row auto_scroll">
+		<div class="newstxtbox col-md-12 col-xs-12 onlynewstxtbox">
+			<h3><a href="https://forum.eepw.com.cn/thread/349736/1" target="_blank">广州公寓这样做智能照明，简单舒适又高级</a></h3>
+			  			<div class="newsbtm onlytxt_newsbtm">  				
+				<span class="news_fenl"> 
+									<a href="https://passport.eepw.com.cn/profile/post/u/758527">boring000</a>
+								</span> 
+
+				<span class="hidden-sm hidden-xs">
+				  				</span> 
+				<span class="newstime">2021-03-18</span>
+  			</div>
+  			
+  		</div>
+  	</div>
+	<div class="row auto_scroll">
+		<div class="col-md-3 col-xs-3 newspicbox"> <a href="http://www.eepw.com.cn/article/201912/408680.htm" target="_blank"><img class="img-responsive" src="http://editerupload.eepw.com.cn/202001/1578276718433778.jpg"></a></div>
+		<div class="newstxtbox col-md-9 col-xs-9">
+			<h3><a href="http://www.eepw.com.cn/article/201912/408680.htm" target="_blank">基于共享公寓的智能电源管理系统设计</a></h3>
+			<!--下载 视频 新闻-->
+						<div class="newsintro hidden-xs hidden-sm">　　樊习习 1 ，王 尧 2 ，陈铭轩 1 ，葛年明 1　　（1.三江学院电子信息工程学院，江苏 南京，210012；2.南京富岛信息工程有限公司，江苏 南京，210000）　　摘 要：提出了一种远程监控共享公寓智能电源...</div>
+						<div class="newsbtm"> 
+				<span class="news_fenl"> 
+																	</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/s/k/202001">202001</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E7%94%B5%E9%87%8F%E7%9B%91%E6%B5%8B">电量监测</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1">无线通信</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6">远程控制</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2019-12-26</span>
+			</div>
+		</div>
+	</div>
+	<div class="row auto_scroll">
+		<div class="newstxtbox col-md-12 col-xs-12 onlynewstxtbox">
+			<h3><a href="https://forum.eepw.com.cn/thread/347577/1" target="_blank">赋能新基建！郑州地铁3号线的智能照明由GVS视声打造</a></h3>
+			  			<div class="newsbtm onlytxt_newsbtm">  				
+				<span class="news_fenl"> 
+									<a href="https://passport.eepw.com.cn/profile/post/u/758527">boring000</a>
+								</span> 
+
+				<span class="hidden-sm hidden-xs">
+				  				</span> 
+				<span class="newstime">2021-01-22</span>
+  			</div>
+  			
+  		</div>
+  	</div>
+	<div class="row auto_scroll">
+		<div class="col-md-3 col-xs-3 newspicbox"> <a href="http://www.eepw.com.cn/article/202001/409333.htm" target="_blank"><img class="img-responsive" src="http://editerupload.eepw.com.cn/202002/1581303054463275.png"></a></div>
+		<div class="newstxtbox col-md-9 col-xs-9">
+			<h3><a href="http://www.eepw.com.cn/article/202001/409333.htm" target="_blank">如何通过IP/以太网供电将智能照明引入到建设项目</a></h3>
+			<!--下载 视频 新闻-->
+						<div class="newsintro hidden-xs hidden-sm">　　Molex  供稿摘  要：无论是新建项目、进行深度改造，还是从现有的设施迁移到物联网架构，第一步都是要摒弃掉当前那些在新的建设中阻碍技术采用的有机过程，或者是“用合适的同类产品替代”这种更新方式。不要去相信智能楼宇...</div>
+						<div class="newsbtm"> 
+				<span class="news_fenl"> 
+																	</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/s/k/202002">202002</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/IP">IP</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E4%BB%A5%E5%A4%AA%E7%BD%91%E4%BE%9B%E7%94%B5">以太网供电</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E6%A5%BC%E5%AE%87">楼宇</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E5%BB%BA%E8%AE%BE">建设</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2020-01-16</span>
+			</div>
+		</div>
+	</div>
+	<div class="row auto_scroll">
+		<div class="newstxtbox col-md-12 col-xs-12 onlynewstxtbox">
+			<h3><a href="https://forum.eepw.com.cn/thread/350382/1" target="_blank">理想的GVS智能照明体验，就在汕头迎宾花园酒店</a></h3>
+			  			<div class="newsbtm onlytxt_newsbtm">  				
+				<span class="news_fenl"> 
+									<a href="https://passport.eepw.com.cn/profile/post/u/758527">boring000</a>
+								</span> 
+
+				<span class="hidden-sm hidden-xs">
+				  				</span> 
+				<span class="newstime">2021-04-02</span>
+  			</div>
+  			
+  		</div>
+  	</div>
+	<div class="row auto_scroll">
+		<div class="newstxtbox col-md-12 col-xs-12 onlynewstxtbox">
+			<h3><a href="http://www.eepw.com.cn/article/202403/456531.htm" target="_blank">让能源成本降低80%！揭秘智能照明背后的关键技术</a></h3>
+			  			<div class="newsintro hidden-xs hidden-sm">现代建筑中最大的能源消耗主要来自照明系统。根据国际能源署的预测，除非采取具体行动提高效率，否则到2050年，建筑环境中的能源需求将增长50%。因此，智能照明系统迅速走到前台，成为现代建筑中能效战略的重要组成部分，其目标是...</div>
+  			  			<div class="newsbtm onlytxt_newsbtm">  				
+				<span class="news_fenl"> 
+														<a href="https://www.eepw.com.cn/info/industry/special/led">光电显示</a>
+													</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/s/k/Mouser">Mouser</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2024-03-19</span>
+  			</div>
+  			
+  		</div>
+  	</div>
+	<div class="row auto_scroll">
+		<div class="col-md-3 col-xs-3 newspicbox"> <a href="https://www.eepw.com.cn/circuit/201504/123234.html" target="_blank"><img class="img-responsive" src="http://uphotos.eepw.com.cn/1415927710/pics/0a397773fb65fecd5c7b7facc80aea8f.gif"></a></div>
+		<div class="newstxtbox col-md-9 col-xs-9">
+			<h3><a href="https://www.eepw.com.cn/circuit/201504/123234.html" target="_blank">恩智浦智能照明应用方案</a></h3>
+			<!--下载 视频 新闻-->
+						<div class="newsbtm"> 
+				<span class="news_fenl"> 
+									<a href="https://diagram.eepw.com.cn">设计方案</a>
+								</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/c/k/JN5168">JN5168</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/c/k/%E6%97%A0%E7%BA%BF%E5%BE%AE%E6%8E%A7%E5%88%B6%E5%99%A8">无线微控制器</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/c/k/%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8">温度传感器</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/c/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2015-04-01</span>
+			</div>
+		</div>
+	</div>
+	<div class="row auto_scroll">
+		<div class="newstxtbox col-md-12 col-xs-12 onlynewstxtbox">
+			<h3><a href="http://www.eepw.com.cn/article/202312/453948.htm" target="_blank">协力INGY和 Wirepas以MG24多协议SoC提升智能照明控制</a></h3>
+			  			<div class="newsintro hidden-xs hidden-sm">Silicon Labs（亦称“芯科科技”）提供超低功耗且具备大容量存储和低延迟无线连接等行业领先性能的MG24多协议SoC，为INGY和Wirepas于智能照明控制系统的合作带来了极大助益，满足了新型照明系统对于尺寸限...</div>
+  			  			<div class="newsbtm onlytxt_newsbtm">  				
+				<span class="news_fenl"> 
+														<a href="https://www.eepw.com.cn/info/industry/special/led">光电显示</a>
+													</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/s/k/INGY">INGY</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/MG24">MG24</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2023-12-15</span>
+  			</div>
+  			
+  		</div>
+  	</div>
+	<div class="row auto_scroll">
+		<div class="col-md-3 col-xs-3 newspicbox"> <a href="https://www.eepw.com.cn/circuit/201508/125323.html" target="_blank"><img class="img-responsive" src="http://upload.semidata.info/new.eefocus.com/article/image/2014/11/14/54653a451b9b0-thumb.jpg"></a></div>
+		<div class="newstxtbox col-md-9 col-xs-9">
+			<h3><a href="https://www.eepw.com.cn/circuit/201508/125323.html" target="_blank">智能控制令照明更加节能</a></h3>
+			<!--下载 视频 新闻-->
+						<div class="newsbtm"> 
+				<span class="news_fenl"> 
+									<a href="https://diagram.eepw.com.cn">设计方案</a>
+								</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/c/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E%20">智能照明 </a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/c/k/%20%20%E6%97%A0%E7%BA%BF%E6%8E%A7%E5%88%B6%20%20">  无线控制  </a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/c/k/%20%E8%8A%82%E8%83%BD"> 节能</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2015-08-17</span>
+			</div>
+		</div>
+	</div>
+	<div class="row auto_scroll">
+		<div class="col-md-3 col-xs-3 newspicbox"> <a href="https://www.eepw.com.cn/circuit/201508/124961.html" target="_blank"><img class="img-responsive" src="http://uphotos.eepw.com.cn/1415927710/pics/63d87d97090d352c86f07c42c70f5958.jpg"></a></div>
+		<div class="newstxtbox col-md-9 col-xs-9">
+			<h3><a href="https://www.eepw.com.cn/circuit/201508/124961.html" target="_blank">一种基于动态目标跟踪技术和PLC Bus的智能照明控制系统</a></h3>
+			<!--下载 视频 新闻-->
+						<div class="newsbtm"> 
+				<span class="news_fenl"> 
+									<a href="https://diagram.eepw.com.cn">设计方案</a>
+								</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/c/k/PLC%20">PLC </a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/c/k/Bus">Bus</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/c/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2015-08-07</span>
+			</div>
+		</div>
+	</div>
+	<div class="row auto_scroll">
+		<div class="col-md-3 col-xs-3 newspicbox"> <a href="https://www.eepw.com.cn/circuit/201412/122008.html" target="_blank"><img class="img-responsive" src="http://www.cn.nxp.com/wcm_documents/applications/block-diagrams/aaa-003103.gif"></a></div>
+		<div class="newstxtbox col-md-9 col-xs-9">
+			<h3><a href="https://www.eepw.com.cn/circuit/201412/122008.html" target="_blank">智能照明</a></h3>
+			<!--下载 视频 新闻-->
+						<div class="newsbtm"> 
+				<span class="news_fenl"> 
+									<a href="https://diagram.eepw.com.cn">设计方案</a>
+								</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/c/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/c/k/JenNet-IP">JenNet-IP</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2014-12-31</span>
+			</div>
+		</div>
+	</div>
+	<div class="row auto_scroll">
+		<div class="newstxtbox col-md-12 col-xs-12 onlynewstxtbox">
+			<h3><a href="http://www.eepw.com.cn/article/202309/450562.htm" target="_blank">二合一的智能照明和联接方案</a></h3>
+			  			<div class="newsintro hidden-xs hidden-sm">在智能建筑应用中，照明是建筑物的基础功能，除了通过智能照明控制以达到节省能源、提高效率的目标外，通过可见光通信（VLC）技术，还可以实现室内定位与数据传输的功能，同时提供了二合一的智能照明和联接方案。本文将为您介绍VLC...</div>
+  			  			<div class="newsbtm onlytxt_newsbtm">  				
+				<span class="news_fenl"> 
+														<a href="https://www.eepw.com.cn/info/industry/special/led">光电显示</a>
+													</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/s/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2023-09-14</span>
+  			</div>
+  			
+  		</div>
+  	</div>
+	<div class="row auto_scroll">
+		<div class="newstxtbox col-md-12 col-xs-12 onlynewstxtbox">
+			<h3><a href="https://share.eepw.com.cn/share/download/id/63826" target="_blank">基于热释电传感器楼宇智能照明控制系统</a></h3>
+			  			<div class="newsintro hidden-xs hidden-sm">分析了热释红外线传感器PIR输出信号特点，设计基于D203S高校楼宇智能照明控制系统，实现高校教室照明时间和空间控制。系统由传感器采集电路，OP07信号调理电路，ADC0832采样电路，DS1302时钟控制电路等部分构成...</div>
+  			  			<div class="newsbtm onlytxt_newsbtm">  				
+				<span class="news_fenl"> 
+									<a href="https://share.eepw.com.cn">资源下载</a>
+								</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/s/k/%E7%94%B5%E4%BC%A0%E6%84%9F%E5%99%A8">电传感器</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/DS1302">DS1302</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2012-04-10</span>
+  			</div>
+  			
+  		</div>
+  	</div>
+	<div class="row auto_scroll">
+		<div class="newstxtbox col-md-12 col-xs-12 onlynewstxtbox">
+			<h3><a href="https://share.eepw.com.cn/share/download/id/391235" target="_blank">浅谈智能照明控制系统应用在城市轨道交通</a></h3>
+			  			<div class="newsintro hidden-xs hidden-sm">在传统的城市轨道交通设计方面，照明设计方案具有一定的弊端。随着计算机技术的发展，智能化技术渐渐步入人们的生活并成为主流，故在城市轨道交通中应用新型的照明控制设计，即智能控制系统。本文主要对智能照明的具体应用进行了分析，并...</div>
+  			  			<div class="newsbtm onlytxt_newsbtm">  				
+				<span class="news_fenl"> 
+									<a href="https://share.eepw.com.cn">资源下载</a>
+								</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/s/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E8%BD%A8%E9%81%93%E4%BA%A4%E9%80%9A">轨道交通</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E5%BA%94%E7%94%A8%E7%A0%94%E7%A9%B6">应用研究</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2023-10-17</span>
+  			</div>
+  			
+  		</div>
+  	</div>
+	<div class="row auto_scroll">
+		<div class="col-md-3 col-xs-3 newspicbox"> <a href="http://v.eepw.com.cn/video/play/id/2479" target="_blank"><img class="img-responsive" src="http://editerupload.eepw.com.cn/201301/8410a6d9150509dd4128409bab590f20.jpg"></a></div>
+		<div class="newstxtbox col-md-9 col-xs-9">
+			<h3><a href="http://v.eepw.com.cn/video/play/id/2479" target="_blank">智能照明控制系统</a></h3>
+			<!--下载 视频 新闻-->
+						<div class="newsintro hidden-xs hidden-sm">开发背景：
+当今时代，资源日益匮乏，发展节能行业已经逐渐成为一种必然的趋势，所以使用低能耗的产品也正逐渐为大众所青睐，随着经济与科学技术的发展，人们对产品的智能度要求更高，市场也开始关注产品的智能化和产品的人性化。
+...</div>
+						<div class="newsbtm"> 
+				<span class="news_fenl"> 
+									<a href="http://v.eepw.com.cn">视频</a>
+								</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="http://v.eepw.com.cn/video/search/key/%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E5%A4%A7%E8%B5%9B">信息技术大赛</a>&nbsp;
+			    					<a href="http://v.eepw.com.cn/video/search/key/%E5%8D%95%E7%89%87%E6%9C%BA">单片机</a>&nbsp;
+			    					<a href="http://v.eepw.com.cn/video/search/key/STC15F2K61S2">STC15F2K61S2</a>&nbsp;
+			    					<a href="http://v.eepw.com.cn/video/search/key/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    					<a href="http://v.eepw.com.cn/video/search/key/A%2FD%E8%BD%AC%E6%8D%A2%E5%99%A8">A/D转换器</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2013-01-10</span>
+			</div>
+		</div>
+	</div>
+	<div class="row auto_scroll">
+		<div class="newstxtbox col-md-12 col-xs-12 onlynewstxtbox">
+			<h3><a href="http://www.eepw.com.cn/article/202007/414978.htm" target="_blank">中国智能照明竞争格局，智能照明将成为未来传统照明的升级趋势</a></h3>
+			  			<div class="newsintro hidden-xs hidden-sm">一、智能照明行业发展概况智能照明是智能家居范畴的重要组成部分，利用物联网技术、有线/无线通讯技术、电力载波通讯技术、嵌入式计算机智能化信息处理，以及节能控制等技术组成的分布式照明控制系统，来实现对照明设备的智能化控制。具...</div>
+  			  			<div class="newsbtm onlytxt_newsbtm">  				
+				<span class="news_fenl"> 
+														<a href="https://www.eepw.com.cn/info/industry/special/led">光电显示</a>
+													</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/s/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E5%AE%B6%E5%B1%85%E7%85%A7%E6%98%8E">家居照明</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E8%8A%82%E8%83%BD%E6%8E%A7%E5%88%B6">节能控制</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2020-07-01</span>
+  			</div>
+  			
+  		</div>
+  	</div>
+	<div class="row auto_scroll">
+		<div class="col-md-3 col-xs-3 newspicbox"> <a href="http://www.eepw.com.cn/article/202306/448178.htm" target="_blank"><img class="img-responsive" src="http://editerupload.eepw.com.cn/202306/1688109929578415.png"></a></div>
+		<div class="newstxtbox col-md-9 col-xs-9">
+			<h3><a href="http://www.eepw.com.cn/article/202306/448178.htm" target="_blank">2023年智能照明市场增速领跑,无主灯概念加速智能化升级</a></h3>
+			<!--下载 视频 新闻-->
+						<div class="newsintro hidden-xs hidden-sm">IDC《中国智能家居设备市场季度跟踪报告，2023年第一季度》显示，2023年中国智能照明市场出货量预计为3,379万台，同比增长20.7%，增速领跑中国智能家居设备市场。人机交互方式升级是市场增长的重要驱动力，同时无主...</div>
+						<div class="newsbtm"> 
+				<span class="news_fenl"> 
+														<a href="https://www.eepw.com.cn/info/industry/special/led">光电显示</a>
+													</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/s/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E6%97%A0%E4%B8%BB%E7%81%AF%E6%A6%82%E5%BF%B5">无主灯概念</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2023-06-30</span>
+			</div>
+		</div>
+	</div>
+	<div class="row auto_scroll">
+		<div class="newstxtbox col-md-12 col-xs-12 onlynewstxtbox">
+			<h3><a href="http://www.eepw.com.cn/article/202304/446100.htm" target="_blank">蓝牙mesh技术持续赋能台达电子智能照明系统创新</a></h3>
+			  			<div class="newsintro hidden-xs hidden-sm">蓝牙设备网络的解决方案主要是基于蓝牙mesh网络实现的多对多网络。根据《2023年蓝牙市场最新资讯》预估，到2027年，设备网络的年出货量将会达到16.3亿，复合年增长率将会达到21%。&nbsp;作为蓝牙设备网络解决方...</div>
+  			  			<div class="newsbtm onlytxt_newsbtm">  				
+				<span class="news_fenl"> 
+														<a href="https://www.eepw.com.cn/info/industry/special/wireless">手机与无线通信</a>
+													</span> 
+
+				<span class="hidden-sm hidden-xs">
+																	<a href="https://www.eepw.com.cn/tech/s/k/%E8%93%9D%E7%89%99mesh">蓝牙mesh</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E5%8F%B0%E8%BE%BE%E7%94%B5%E5%AD%90">台达电子</a>&nbsp;
+			    					<a href="https://www.eepw.com.cn/tech/s/k/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E">智能照明</a>&nbsp;
+			    			      				</span> 
+				<span class="newstime">2023-04-28</span>
+  			</div>
+  			
+  		</div>
+  	</div>
+</div>
+      
+      <div class="relArtical">
+      <ul class="preNext">
+      		<li><a href="https://www.eepw.com.cn/zhuanlan/202307/317091.html" target="_blank" title="计量标准的稳定性考核要求">上一篇：计量标准的稳定性考核要求</a></li>
+	  				<li><a href="https://www.eepw.com.cn/zhuanlan/202307/317090.html" target="_blank" title="北京方等高铁动车组应用传感器">下一篇：北京方等高铁动车组应用传感器</a></li>
+			
+	</ul>
+      </div>
+      </div>
+      </div>
+</div>
+  </div>
+<!-- main left end-->
+
+<!-- main right begin-->
+  <div class="col-md-4 col-xs-12 col-sm-12" style="float: right;">
+  <div class="row">
+  	<div class="news_detail_newad3">
+    <!-- 广告位：Afinal15-2 -->
+	    <iframe id='abbb0a3d' name='abbb0a3d' src='https://ad.eepw.com.cn/www/delivery/afr.php?zoneid=86&amp;cb=INSERT_RANDOM_NUMBER_HERE' frameborder='0' scrolling='no' width='300' height='200'><a href='https://ad.eepw.com.cn/www/delivery/ck.php?n=a674caa6&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='https://ad.eepw.com.cn/www/delivery/avw.php?zoneid=86&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a674caa6' border='0' alt='' /></a></iframe>
+	</div>
+    </div>
+<!-- 在线研讨会 begin-->	
+<div class="row">
+      <div class="col-md-12 mrpart news_detail_train_new">
+        <div class="row nestp2">
+          <div class="col-md-12 col-sm-12 col-xs-12 mrtit"><span><a href="http://seminar.eepw.com.cn" target="_blank">更多</a></span> <b>培训课堂</b>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="row">
+        <script src="https://forum.eepw.com.cn/jscontent/seminar2026" type="text/javascript"></script>	
+        </div>
+      </div>
+    </div>
+<!-- 在线研讨会 end-->
+<!--焦点-->
+<div class="row">
+  <div class="col-md-12 mrpart">
+    <div class="row nestp2">
+      <div class="col-md-12 col-sm-12 col-xs-12 mrtit">
+        <span><a href="https://www.eepw.com.cn/news" target="_blank">更多</a></span>
+        <b>焦点</b>
+        <div class="clear"></div>
+      </div>          
+    </div>
+    <div class="row nestp2">
+		<div class="col-md-12 col-sm-12 col-xs-12 nesty6-txt">
+      		<script src="https://forum.eepw.com.cn/jscontent/iscommend2026" type="text/javascript"></script>
+      </div>          
+    </div>        
+  </div>
+</div>
+<!--焦点end-->
+    <div class="row">
+        <div class="news_detail_newad4">
+          <!-- 广告位：Afinal34-2 -->
+		<iframe id='a3bbb656' name='a3bbb656' src='https://ad.eepw.com.cn/www/delivery/afr.php?zoneid=85&amp;cb=INSERT_RANDOM_NUMBER_HERE' frameborder='0' scrolling='no' width='300' height='200'><a href='https://ad.eepw.com.cn/www/delivery/ck.php?n=a50e4511&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='https://ad.eepw.com.cn/www/delivery/avw.php?zoneid=85&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a50e4511' border='0' alt='' /></a></iframe>
+        </div>
+<!--视频-->
+      <div class="col-md-12 mrpart">
+        <div class="row nestp2">
+          <div class="col-md-12 col-sm-12 col-xs-12 mrtit"><span><a href="http://v.eepw.com.cn" target="_blank">更多</a></span> <b>视频</b>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="clear">
+          <script src="https://forum.eepw.com.cn/jscontent/newvideo2026" type="text/javascript"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--视频end-->
+<!-- 视频下方广告位 -->
+	<div class="row">
+		<script src="https://webstorage.eepw.com.cn/css/2025/space/js/ad.js"></script>
+		<div class="AD300x200_afinal25_back" id="newsnavmenu2" >
+			<!-- 广告位：afinal25-2 -->
+			<iframe id='ad1368e1' name='ad1368e1' src='https://ad.eepw.com.cn/www/delivery/afr.php?zoneid=84&amp;cb=INSERT_RANDOM_NUMBER_HERE' frameborder='0' scrolling='no' width='302' height='300'><a href='https://ad.eepw.com.cn/www/delivery/ck.php?n=aaeb3436&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='https://ad.eepw.com.cn/www/delivery/avw.php?zoneid=84&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aaeb3436' border='0' alt='' /></a></iframe>
+		</div>
+	</div>
+  </div>
+
+
+<!--技术专区-->
+     <div class="title_tech">
+        <h2>技术专区</h2>
+      </div>
+      <div class="technology">
+		<ul>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/FPGA" title="FPGA" target="_blank">FPGA</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/DSP" title="DSP" target="_blank">DSP</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/MCU" title="MCU" target="_blank">MCU</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E7%A4%BA%E6%B3%A2%E5%99%A8" title="示波器" target="_blank">示波器</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA" title="步进电机" target="_blank">步进电机</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/Zigbee" title="Zigbee" target="_blank">Zigbee</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/LabVIEW" title="LabVIEW" target="_blank">LabVIEW</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/Arduino" title="Arduino" target="_blank">Arduino</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/RFID" title="RFID" target="_blank">RFID</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/NFC" title="NFC" target="_blank">NFC</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/STM32" title="STM32" target="_blank">STM32</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/Protel" title="Protel" target="_blank">Protel</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/GPS" title="GPS" target="_blank">GPS</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/MSP430" title="MSP430" target="_blank">MSP430</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/Multisim" title="Multisim" target="_blank">Multisim</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E6%BB%A4%E6%B3%A2%E5%99%A8" title="滤波器" target="_blank">滤波器</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/CAN%E6%80%BB%E7%BA%BF" title="CAN总线" target="_blank">CAN总线</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E5%BC%80%E5%85%B3%E7%94%B5%E6%BA%90" title="开关电源" target="_blank">开关电源</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E5%8D%95%E7%89%87%E6%9C%BA" title="单片机" target="_blank">单片机</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/PCB" title="PCB" target="_blank">PCB</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/USB" title="USB" target="_blank">USB</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/ARM" title="ARM" target="_blank">ARM</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/CPLD" title="CPLD" target="_blank">CPLD</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E8%BF%9E%E6%8E%A5%E5%99%A8" title="连接器" target="_blank">连接器</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/MEMS" title="MEMS" target="_blank">MEMS</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/CMOS" title="CMOS" target="_blank">CMOS</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/MIPS" title="MIPS" target="_blank">MIPS</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/EMC" title="EMC" target="_blank">EMC</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/EDA" title="EDA" target="_blank">EDA</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/ROM" title="ROM" target="_blank">ROM</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E9%99%80%E8%9E%BA%E4%BB%AA" title="陀螺仪" target="_blank">陀螺仪</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/VHDL" title="VHDL" target="_blank">VHDL</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E6%AF%94%E8%BE%83%E5%99%A8" title="比较器" target="_blank">比较器</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/Verilog" title="Verilog" target="_blank">Verilog</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E7%A8%B3%E5%8E%8B%E7%94%B5%E6%BA%90" title="稳压电源" target="_blank">稳压电源</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/RAM" title="RAM" target="_blank">RAM</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/AVR" title="AVR" target="_blank">AVR</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E4%BC%A0%E6%84%9F%E5%99%A8" title="传感器" target="_blank">传感器</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E5%8F%AF%E6%8E%A7%E7%A1%85" title="可控硅" target="_blank">可控硅</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/IGBT" title="IGBT" target="_blank">IGBT</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91" title="嵌入式开发" target="_blank">嵌入式开发</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E9%80%86%E5%8F%98%E5%99%A8" title="逆变器" target="_blank">逆变器</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/Quartus" title="Quartus" target="_blank">Quartus</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/RS-232" title="RS-232" target="_blank">RS-232</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/Cyclone" title="Cyclone" target="_blank">Cyclone</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E7%94%B5%E4%BD%8D%E5%99%A8" title="电位器" target="_blank">电位器</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E7%94%B5%E6%9C%BA%E6%8E%A7%E5%88%B6" title="电机控制" target="_blank">电机控制</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E8%93%9D%E7%89%99" title="蓝牙" target="_blank">蓝牙</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/PLC" title="PLC" target="_blank">PLC</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/PWM" title="PWM" target="_blank">PWM</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E6%B1%BD%E8%BD%A6%E7%94%B5%E5%AD%90" title="汽车电子" target="_blank">汽车电子</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E8%BD%AC%E6%8D%A2%E5%99%A8" title="转换器" target="_blank">转换器</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86" title="电源管理" target="_blank">电源管理</a></li>
+						<li><a href="https://www.eepw.com.cn/tech/s/k/%E4%BF%A1%E5%8F%B7%E6%94%BE%E5%A4%A7%E5%99%A8" title="信号放大器" target="_blank">信号放大器</a></li>
+			            <div class="clear"></div>
+		</ul>
+      </div>
+<!--技术专区end-->
+<!--main right end--></div>
+</div>
+<!--main end-->
+<footer>		
+		<div class="inner">
+			<dl class="techCh">
+				<dt>技术频道</dt>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/embedded" target="_blank">嵌入式</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/component" target="_blank">元件/连接器</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/power" target="_blank">电源管理</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/safety" target="_blank">安防电子</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/auto" target="_blank">汽车电子</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/eda" target="_blank">EDA与制造</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/consume" target="_blank">消费电子</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/control" target="_blank">工业电子</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/analog" target="_blank">模拟IC</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/medical" target="_blank">医疗电子</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/tm" target="_blank">测试测量</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/wireless" target="_blank">通信技术</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/led" target="_blank">光电显示</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/smart" target="_blank">智能计算</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/network" target="_blank">网络与存储</a></dd>
+						<dd><a href="https://www.eepw.com.cn/info/industry/special/iot" target="_blank">物联网</a></dd>
+				</dl>
+			<dl>
+				<dt>技术子站</dt>
+						<dd><a href="http://ec.eepw.com.cn/center/index/userid/38768" target="_blank">PI技术专区 </a></dd>
+						<dd><a href="http://www.eepw.com.cn/event/action/adi_video/index.html " target="_blank">ADI视频专区 </a></dd>
+						<dd><a href="http://ec.eepw.com.cn/center/index/userid/38503" target="_blank">ZYNQ技术社区</a></dd>	
+						<dd><a href="http://ec.eepw.com.cn/mfmember/index/userid/42160" target="_blank">ADI技术专区</a></dd>
+						<dd><a href="http://ec.eepw.com.cn/center/index/userid/41542" target="_blank">维博专区</a></dd>
+						<dd><a href="http://ec.eepw.com.cn/center/index/userid/40407" target="_blank">贝能技术社区</a></dd>
+						<dd><a href="http://ec.eepw.com.cn/center/index/userid/40398" target="_blank">Microchip资源技术社区</a></dd>
+						<dd><a href="http://ec.eepw.com.cn/center/index/userid/40461" target="_blank">Fluke技术社区</a></dd>
+						<dd><a href="http://www.eepw.com.cn/event/action/Microchip/index.html" target="_blank">Microchip视频技术社区</a></dd>
+						<dd><a href="http://xilinx.eepw.com.cn/" target="_blank">赛灵思社区</a></dd>	
+						<dd><a href="http://ec.eepw.com.cn/center/index/userid/40907" target="_blank">IR iMotion 数字电机技术社区</a></dd>			
+						<dd><a href="http://www.iquark.com.cn/" target="_blank">英特尔Quark开发者俱乐部</a></dd>
+						<dd><a href="http://ec.eepw.com.cn/center/index/userid/41379" target="_blank">MultiSIM BLUE</a></dd>
+						<dd><a href="http://ec.eepw.com.cn/center/index/userid/41442" target="_blank">Andes专区</a></dd>
+						<dd><a href="http://ec.eepw.com.cn/center/index/userid/42590" target="_blank">蔡司光学专栏</a></dd>
+			</dl>
+
+		<div class="QRcode">
+		<h3 class="mediatitle_20240428">全媒体矩阵</h3>
+        <ul>
+        <li>
+        <img src="https://www.eepw.com.cn/event/action/images/code_gzh.jpg" width="100" style="margin-bottom:3px;"><br>
+        <span>EEPW微信公众号</span><br>
+        <img src="https://www.eepw.com.cn/event/action/images/code_video.jpg" width="100" style="margin-bottom:3px;"><br>
+        <span>EEPW视频号</span>
+        </li>
+        <li>
+        <img src="https://www.eepw.com.cn/event/action/images/code_bilibili.jpg" width="100" style="margin-bottom:3px;"><br>
+        <span>EEPW Bilibili号</span><br>
+        <img src="https://www.eepw.com.cn/event/action/images/code_tth.jpg" width="100" style="margin-bottom:3px;"><br>
+        <span>EEPW头条号</span>
+        </li>
+        <li>
+        <img src="https://www.eepw.com.cn/event/action/images/douyin_code.jpg" width="100" style="margin-bottom:3px;"><br>
+        <span>EEPW抖音号</span><br>
+        <img src="https://www.eepw.com.cn/event/action/images/douyin_code2.jpg" width="100" style="margin-bottom:3px;"><br>
+        <span>EEPW编辑部日常</span>
+        </li>           
+        </ul>
+			</div>				
+			<div class="clear"></div>
+		</div>
+		
+		<div class="copyright">
+			<div class="copyrightInner">
+				<span class="fontArial">Copyright © 电子产品世界</span>
+				<a href="https://www.eepw.com.cn/event/company/about.html" rel="nofollow" target="_blank">关于我们</a>
+				<a href="https://www.eepw.com.cn/event/company/contact.html" rel="nofollow" target="_blank">联系我们</a>
+				<a href="https://www.eepw.com.cn/event/action/mapNav/map.html" target="_blank">网站地图</a>
+			</div>
+		</div>
+	</footer>
+	
+	
+<div style="display:none;">
+<script type="text/javascript" src="https://s6.cnzz.com/z.js?id=3241344"></script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc5e9057ff0d62338aaf443148e00157f' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</div>
+<script src="https://www.eepw.com.cn/event/ad/right_box.js"></script>
+</body>
+</html><!--代码高亮start-->
+<script charset="utf-8" src="/pub/code/shCore.js"></script>
+<script charset="utf-8" src="/pub/code/shBrushCpp.js"></script>
+<script charset="utf-8">
+dp.SyntaxHighlighter.ClipboardSwf = '/pub/code/clipboard.swf';
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+<!--代码高亮end-->
+
+<!--路障广告ad-->
+<script src="https://webstorage.eepw.com.cn/js/2012/finalad.js" type="text/javascript"></script>

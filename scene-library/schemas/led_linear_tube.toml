@@ -1,0 +1,204 @@
+# 品类 Schema：LED 线性灯管
+# 定义该类产品的 BOM 结构模板，用于解析器和场景匹配共享
+# 新增品类只需复制此文件修改属性字段即可
+
+[schema]
+id = "led_linear_tube"
+name = "LED 线性灯管/灯具"
+description = "T8/T5 灯管形态，含传感/通信/控制模组的智能灯具"
+version = "1.0"
+
+# ============================================================
+# 产品基本规格
+# ============================================================
+[fields.product_specs]
+description = "产品基本规格参数"
+
+[fields.product_specs.voltage]
+type = "string"
+required = true
+description = "供电电压"
+example = "AC220V"
+
+[fields.product_specs.power]
+type = "object"
+required = true
+fields = [
+    { name = "nominal", type = "number", required = true, unit = "W", description = "额定功率" },
+    { name = "range_min", type = "number", required = false, unit = "W", description = "功率下限（可调时填写）" },
+    { name = "range_max", type = "number", required = false, unit = "W", description = "功率上限（可调时填写）" },
+]
+
+[fields.product_specs.color]
+type = "string"
+required = true
+description = "灯具外观颜色"
+
+[fields.product_specs.length]
+type = "number"
+required = true
+unit = "m"
+description = "灯具长度"
+
+[fields.product_specs.cct]
+type = "object"
+required = false
+fields = [
+    { name = "min", type = "number", required = false, unit = "K", description = "色温下限" },
+    { name = "max", type = "number", required = false, unit = "K", description = "色温上限" },
+]
+
+[fields.product_specs.efficacy]
+type = "object"
+required = false
+fields = [
+    { name = "value", type = "number", required = true, unit = "LM/W", description = "光效值" },
+]
+
+[fields.product_specs.ra]
+type = "number"
+required = false
+description = "显色指数 Ra"
+
+# ============================================================
+# 光源模组
+# ============================================================
+[fields.light_module]
+description = "光源模组"
+
+[fields.light_module.led_type]
+type = "string"
+required = false
+description = "LED 灯珠型号/类型"
+
+[fields.light_module.led_qty]
+type = "number"
+required = false
+description = "灯珠数量"
+
+[fields.light_module.lens]
+type = "string"
+required = false
+description = "透镜类型"
+
+# ============================================================
+# 电源模组
+# ============================================================
+[fields.power_module]
+description = "电源驱动模组"
+
+[fields.power_module.type]
+type = "string"
+required = false
+description = "驱动类型（恒流/恒压/调光）"
+enum = ["constant_current", "constant_voltage", "dimmable", "dali"]
+
+[fields.power_module.dimming_range]
+type = "object"
+required = false
+fields = [
+    { name = "min", type = "number", required = true, unit = "%", description = "调光下限" },
+    { name = "max", type = "number", required = true, unit = "%", description = "调光上限" },
+]
+
+# ============================================================
+# 传感模组
+# ============================================================
+[fields.sensor_module]
+description = "传感器模组"
+
+[fields.sensor_module.type]
+type = "string"
+required = true
+description = "传感器类型"
+enum = ["radar_5.8G", "radar_10G", "pir", "ultrasonic", "microwave", "none"]
+
+[fields.sensor_module.sensitivity_adjustable]
+type = "boolean"
+required = false
+default = false
+description = "灵敏度是否可调"
+
+[fields.sensor_module.detection_radius]
+type = "object"
+required = false
+fields = [
+    { name = "min", type = "number", required = false, unit = "m" },
+    { name = "max", type = "number", required = false, unit = "m" },
+]
+
+# ============================================================
+# 通信模组
+# ============================================================
+[fields.communication_module]
+description = "通信模组"
+
+[fields.communication_module.uplink]
+type = "array"
+required = false
+item_type = "string"
+enum = ["4G", "5G", "ethernet", "wi-fi", "nb-iot", "none"]
+description = "上行通信方式"
+
+[fields.communication_module.downlink]
+type = "array"
+required = false
+item_type = "string"
+enum = ["rs-485", "rs-232", "lora", "zigbee", "bluetooth", "ethernet", "none"]
+description = "下行通信方式"
+
+[fields.communication_module.protocols]
+type = "object"
+required = false
+fields = [
+    { name = "industrial", type = "array", required = false, item_type = "string", description = "工业协议" },
+    { name = "iot", type = "array", required = false, item_type = "string", description = "IoT协议" },
+    { name = "distance", type = "object", required = false, fields = [
+        { name = "min", type = "number", unit = "m" },
+        { name = "max", type = "number", unit = "m" },
+    ]},
+]
+
+# ============================================================
+# 控制模组
+# ============================================================
+[fields.control_module]
+description = "控制模组"
+
+[fields.control_module.features]
+type = "array"
+required = false
+item_type = "string"
+description = "控制特性列表"
+
+[fields.control_module.no_neutral_wire]
+type = "boolean"
+required = false
+default = false
+description = "免布回路线（单火线安装）"
+
+[fields.control_module.encryption]
+type = "boolean"
+required = false
+default = false
+description = "控制是否支持加密"
+
+# ============================================================
+# 环境适应性
+# ============================================================
+[fields.environment]
+description = "环境适应性参数"
+
+[fields.environment.temp_range]
+type = "object"
+required = true
+fields = [
+    { name = "min", type = "number", unit = "C", description = "最低工作温度" },
+    { name = "max", type = "number", unit = "C", description = "最高工作温度" },
+]
+
+[fields.environment.ip_ratings]
+type = "array"
+required = false
+item_type = "string"
+description = "防护等级列表"

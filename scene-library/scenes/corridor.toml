@@ -1,0 +1,80 @@
+[scene]
+id = "corridor"
+name = "长走廊/通道"
+description = "办公楼、医院、学校走廊，重点是人来灯亮、人走渐灭、邻组预亮"
+priority = "P1"
+
+[hard_constraints]
+
+[[hard_constraints.items]]
+field = "sensor_module.type"
+op = "in"
+value = ["radar_5.8G", "pir", "microwave"]
+comment = "走廊需要感应"
+
+[[hard_constraints.items]]
+field = "control_module.features"
+op = "contains"
+value = "gradual_on_off"
+comment = "走廊渐亮渐灭是刚需，避免突然闪烁"
+
+[[hard_constraints.items]]
+field = "control_module.features"
+op = "contains"
+value = "neighbor_notification"
+comment = "邻组通知实现'人未到灯先亮'"
+
+[soft_scoring]
+
+[soft_scoring.dimensions.neighbor_notify_match]
+weight = 0.30
+comment = "邻组联动能力"
+
+[soft_scoring.dimensions.neighbor_notify_match.scoring]
+type = "feature_check"
+field = "control_module.features"
+required_features = ["neighbor_notification"]
+score_all = 1.0
+score_partial = 0.5
+
+[soft_scoring.dimensions.fade_match]
+weight = 0.25
+comment = "渐亮渐灭控制"
+
+[soft_scoring.dimensions.fade_match.scoring]
+type = "feature_check"
+field = "control_module.features"
+required_features = ["gradual_on_off", "on_off_speed_adjustable"]
+score_all = 1.0
+score_partial = 0.6
+
+[soft_scoring.dimensions.sensor_match]
+weight = 0.20
+comment = "传感器类型"
+
+[soft_scoring.dimensions.sensor_match.scoring]
+type = "enum_exact"
+field = "sensor_module.type"
+mapping = { "radar_5.8G" = 1.0, pir = 0.9, microwave = 0.7, ultrasonic = 0.5 }
+
+[soft_scoring.dimensions.hold_time_match]
+weight = 0.15
+comment = "保持时间可调"
+
+[soft_scoring.dimensions.hold_time_match.scoring]
+type = "feature_check"
+field = "control_module.features"
+required_features = ["hold_time_adjustable"]
+score_all = 1.0
+score_partial = 0.5
+
+[soft_scoring.dimensions.power_match]
+weight = 0.10
+comment = "走廊功率 8-16W 较常见"
+
+[soft_scoring.dimensions.power_match.scoring]
+type = "range"
+field = "product_specs.power.nominal"
+ideal_min = 8
+ideal_max = 16
+slope = 4

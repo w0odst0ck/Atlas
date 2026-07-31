@@ -1,0 +1,97 @@
+[scene]
+id = "underground_garage"
+name = "地下车库"
+description = "地下停车场照明，重点是人车感应、分区节能、免布线改造"
+priority = "P0"
+
+[hard_constraints]
+description = "不满足任何一项则该场景淘汰"
+
+[[hard_constraints.items]]
+field = "sensor_module.type"
+op = "in"
+value = ["radar_5.8G", "radar_10G", "microwave"]
+comment = "车库需雷达感应，PIR 在车位上误报率高"
+
+[[hard_constraints.items]]
+field = "control_module.no_neutral_wire"
+op = "eq"
+value = true
+comment = "改造项目必须免布线"
+
+[[hard_constraints.items]]
+field = "power_module.dimming_range.max"
+op = "gte"
+value = 50
+comment = "需支持调光实现休眠节能"
+
+[[hard_constraints.items]]
+field = "environment.temp_range.min"
+op = "lte"
+value = -10
+comment = "地下车库温度不低于 -10℃"
+
+[soft_scoring]
+description = "各维度加权评分，用于匹配场景排序"
+
+[soft_scoring.dimensions.sensor_match]
+weight = 0.25
+comment = "传感器类型匹配度"
+
+[soft_scoring.dimensions.sensor_match.scoring]
+type = "enum_exact"
+field = "sensor_module.type"
+mapping = { "radar_5.8G" = 1.0, "radar_10G" = 1.0, microwave = 0.8, pir = 0.3 }
+
+[soft_scoring.dimensions.communication_match]
+weight = 0.20
+comment = "通信方式匹配度"
+
+[soft_scoring.dimensions.communication_match.scoring]
+type = "enum_intersect"
+field = "communication_module.downlink"
+ideal = ["lora", "zigbee"]
+mapping = { lora = 1.0, zigbee = 0.9, rs_485 = 0.6, rs_232 = 0.4, ethernet = 0.7 }
+mode = "max"
+
+[soft_scoring.dimensions.power_match]
+weight = 0.15
+comment = "功率适配度：车库灯管 10-20W 为理想区间"
+
+[soft_scoring.dimensions.power_match.scoring]
+type = "range"
+field = "product_specs.power.nominal"
+ideal_min = 10
+ideal_max = 20
+slope = 5
+comment = "10-20W 得满分，超出 ±5W 线性降分"
+
+[soft_scoring.dimensions.installation_match]
+weight = 0.15
+comment = "安装便利度"
+
+[soft_scoring.dimensions.installation_match.scoring]
+type = "boolean_fields"
+fields = ["control_module.no_neutral_wire"]
+score_per_match = 1.0
+
+[soft_scoring.dimensions.environment_match]
+weight = 0.15
+comment = "环境适应性匹配"
+
+[soft_scoring.dimensions.environment_match.scoring]
+type = "ip_minimum"
+field = "environment.ip_ratings"
+minimum_ip = "IP40"
+score_per_level_above = 0.05
+
+[soft_scoring.dimensions.protocol_match]
+weight = 0.10
+comment = "工业协议匹配（车库通常不需要 PLC，Modbus 即可）"
+
+[soft_scoring.dimensions.protocol_match.scoring]
+type = "enum_intersect"
+field = "communication_module.protocols.industrial"
+ideal = ["modbus"]
+mapping = { modbus = 1.0, opc_ua = 0.8, siemens_plc = 0.5, mitsubishi_plc = 0.5 }
+mode = "max"

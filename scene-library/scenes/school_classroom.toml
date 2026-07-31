@@ -1,0 +1,201 @@
+# ============================================================
+# 场景：学校教室（LED 教室灯 / 教室智能化改造）
+# 来源：政府采购招标规格（含 ▲ 强制条款）
+# 核心逻辑：健康照明合规为硬底线，智能化特性为增值评分
+# ============================================================
+
+[scene]
+id = "school_classroom"
+name = "学校教室"
+description = "教室照明：健康合规（CCC/RG0/频闪/Ra≥90）为底线，智能化（恒照度/课表联动/分区）为增值"
+priority = "P0"
+
+# ============================================================
+# 硬约束（全部来自招标强制条款，不满足即淘汰）
+# ============================================================
+[hard_constraints]
+
+[[hard_constraints.items]]
+field = "certification.ccc"
+op = "eq"
+value = true
+comment = "▲ 必须通过国家强制性 CCC 认证"
+
+[[hard_constraints.items]]
+field = "environment.ip_ratings"
+op = "contains_any"
+value = ["IP40", "IP41", "IP42", "IP43", "IP44", "IP45", "IP50", "IP54", "IP55", "IP65", "IP66", "IP67"]
+comment = "▲ 整灯防护等级 ≥ IP40"
+
+[[hard_constraints.items]]
+field = "product_specs.ra"
+op = "gte"
+value = 90
+comment = "显色指数 Ra ≥ 90"
+
+[[hard_constraints.items]]
+field = "product_specs.r9"
+op = "gte"
+value = 90
+comment = "R9 ≥ 90"
+
+[[hard_constraints.items]]
+field = "certification.blue_light_rating"
+op = "eq"
+value = "RG0"
+comment = "蓝光认证：无危险类 RG0"
+
+[[hard_constraints.items]]
+field = "certification.flicker_rating"
+op = "in"
+value = ["无显著影响", "无危害类"]
+comment = "频闪认证：无显著影响或无危害类"
+
+[[hard_constraints.items]]
+field = "product_specs.efficacy.value"
+op = "gte"
+value = 80
+comment = "灯具效能 ≥ 80lm/W"
+
+[[hard_constraints.items]]
+field = "product_specs.redundancy_ratio"
+op = "gte"
+value = 3.5
+comment = "LED模块总功率与额定功率之比 ≥ 3.5"
+
+[[hard_constraints.items]]
+field = "product_specs.upward_flux_ratio"
+op = "gte"
+value = 10
+comment = "▲ 上射光通量占总光通量 ≥ 10%（视觉舒适度）"
+
+[[hard_constraints.items]]
+field = "product_specs.up_down_cct_diff"
+op = "lte"
+value = 50
+comment = "▲ 上下色温差 ≤ 50K"
+
+[[hard_constraints.items]]
+field = "product_specs.luminance_uniformity"
+op = "gte"
+value = 0.8
+comment = "发光面亮度均匀度 ≥ 0.8"
+
+[[hard_constraints.items]]
+field = "product_specs.cct.min"
+op = "gte"
+value = 4800
+comment = "色温 5000K ±200K（下限）"
+
+[[hard_constraints.items]]
+field = "product_specs.cct.max"
+op = "lte"
+value = 5200
+comment = "色温 5000K ±200K（上限）"
+
+# ============================================================
+# 软评分（智能化增值 + 裕量评分）
+# ============================================================
+[soft_scoring]
+
+[soft_scoring.dimensions.efficacy_match]
+weight = 0.15
+comment = "效能裕量（≥80 是底线，越高越好）"
+
+[soft_scoring.dimensions.efficacy_match.scoring]
+type = "range"
+field = "product_specs.efficacy.value"
+ideal_min = 90
+ideal_max = 130
+slope = 10
+
+[soft_scoring.dimensions.power_match]
+weight = 0.10
+comment = "功率匹配（36±2W）"
+
+[soft_scoring.dimensions.power_match.scoring]
+type = "range"
+field = "product_specs.power.nominal"
+ideal_min = 34
+ideal_max = 38
+slope = 3
+
+[soft_scoring.dimensions.ra_match]
+weight = 0.10
+comment = "显色裕量（Ra≥90 是底线，≥95 更佳）"
+
+[soft_scoring.dimensions.ra_match.scoring]
+type = "range"
+field = "product_specs.ra"
+ideal_min = 93
+ideal_max = 100
+slope = 3
+
+[soft_scoring.dimensions.dimming_match]
+weight = 0.15
+comment = "调光能力（恒照度控制的基础）"
+
+[soft_scoring.dimensions.dimming_match.scoring]
+type = "feature_check"
+field = "control_module.features"
+required_features = ["dimming_0_100pct", "gradual_on_off"]
+score_all = 1.0
+score_partial = 0.6
+
+[soft_scoring.dimensions.schedule_match]
+weight = 0.10
+comment = "课表联动（教室专属节能逻辑）"
+
+[soft_scoring.dimensions.schedule_match.scoring]
+type = "feature_check"
+field = "control_module.features"
+required_features = ["schedule_link"]
+score_all = 1.0
+score_partial = 0.4
+
+[soft_scoring.dimensions.presence_sensor_match]
+weight = 0.10
+comment = "存在型传感器（静止学生检测）"
+
+[soft_scoring.dimensions.presence_sensor_match.scoring]
+type = "boolean_fields"
+fields = ["sensor_module.presence_type"]
+score_per_match = 1.0
+
+[soft_scoring.dimensions.light_sensor_match]
+weight = 0.10
+comment = "光照传感器（恒照度）"
+
+[soft_scoring.dimensions.light_sensor_match.scoring]
+type = "boolean_fields"
+fields = ["sensor_module.light_sensor"]
+score_per_match = 1.0
+
+[soft_scoring.dimensions.anti_glare_match]
+weight = 0.05
+comment = "防眩设计"
+
+[soft_scoring.dimensions.anti_glare_match.scoring]
+type = "boolean_fields"
+fields = ["light_module.anti_glare"]
+score_per_match = 1.0
+
+[soft_scoring.dimensions.integrated_match]
+weight = 0.05
+comment = "一体式灯具"
+
+[soft_scoring.dimensions.integrated_match.scoring]
+type = "boolean_fields"
+fields = ["light_module.integrated"]
+score_per_match = 1.0
+
+[soft_scoring.dimensions.communication_match]
+weight = 0.10
+comment = "通信能力（智能联网）"
+
+[soft_scoring.dimensions.communication_match.scoring]
+type = "enum_intersect"
+field = "communication_module.downlink"
+ideal = ["rs-485", "lora", "zigbee"]
+mapping = { rs_485 = 1.0, lora = 1.0, zigbee = 0.8, ethernet = 0.7 }
+mode = "max"

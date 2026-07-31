@@ -1,0 +1,25 @@
+# 匹配规则全局配置
+# 控制匹配引擎的行为参数
+
+[engine]
+version = "1.0"
+
+# 软评分及格线：低于此分数的场景虽然通过了硬约束但不显示推荐
+score_threshold = 0.30
+
+# Gap 分析的容差
+gap_tolerance = {
+    temp = { warn_margin = 10, unit = "C" },    # 温度余量 < 10℃ 给出警告
+    power = { warn_margin = 5, unit = "W" },     # 功率偏离理想值 > 5W 给出警告
+    ip = { warn_levels = 1 },                     # IP 低于推荐 1 级给出警告
+}
+
+[output]
+# 输出格式配置
+default_format = "markdown"
+include_gap_analysis = true
+include_raw_scores = false
+include_reasoning = true                         # 输出每个场景匹配的推理过程
+
+# 对接 solutions/ 方案库的模板路径
+solution_template_path = "solutions/{scene_id}/bom_match.md"

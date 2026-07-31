@@ -1,0 +1,247 @@
+# 品类 Schema：LED 面板灯（含教室灯）
+# 定义面板灯类产品的 BOM 结构模板
+# 与 led_linear_tube 的区别：新增光学/认证/健康照明字段
+
+[schema]
+id = "led_panel_light"
+name = "LED 面板灯 / 教室灯"
+description = "600×600 或 300×1200 面板灯形态，含健康照明认证字段（RG0/频闪/Ra）"
+version = "1.0"
+
+# ============================================================
+# 产品基本规格
+# ============================================================
+[fields.product_specs]
+description = "产品基本规格参数"
+
+[fields.product_specs.voltage]
+type = "string"
+required = true
+description = "供电电压"
+
+[fields.product_specs.form_factor]
+type = "string"
+required = true
+description = "外形尺寸"
+example = "600x600 / 300x1200"
+
+[fields.product_specs.power]
+type = "object"
+required = true
+fields = [
+    { name = "nominal", type = "number", required = true, unit = "W", description = "额定功率" },
+    { name = "tolerance", type = "number", required = false, unit = "W", description = "功率公差" },
+    { name = "range_min", type = "number", required = false, unit = "W", description = "功率下限" },
+    { name = "range_max", type = "number", required = false, unit = "W", description = "功率上限" },
+]
+
+[fields.product_specs.efficacy]
+type = "object"
+required = true
+fields = [
+    { name = "value", type = "number", required = true, unit = "LM/W", description = "灯具效能" },
+]
+
+[fields.product_specs.cct]
+type = "object"
+required = true
+fields = [
+    { name = "min", type = "number", unit = "K" },
+    { name = "max", type = "number", unit = "K" },
+]
+
+[fields.product_specs.ra]
+type = "number"
+required = true
+description = "显色指数 Ra"
+
+[fields.product_specs.r9]
+type = "number"
+required = false
+description = "R9 显色指数"
+
+[fields.product_specs.luminance_uniformity]
+type = "number"
+required = false
+description = "发光面亮度均匀度 (0-1)"
+
+[fields.product_specs.upward_flux_ratio]
+type = "number"
+required = false
+unit = "%"
+description = "上射光通量占比"
+
+[fields.product_specs.up_down_cct_diff]
+type = "number"
+required = false
+unit = "K"
+description = "上下色温差"
+
+[fields.product_specs.redundancy_ratio]
+type = "number"
+required = false
+description = "LED模块总功率与额定功率之比"
+
+# ============================================================
+# 光源模组
+# ============================================================
+[fields.light_module]
+description = "光源模组"
+
+[fields.light_module.led_type]
+type = "string"
+required = false
+description = "LED 灯珠型号"
+
+[fields.light_module.lens]
+type = "string"
+required = false
+description = "透镜/扩散板类型"
+
+[fields.light_module.anti_glare]
+type = "string"
+required = false
+description = "防眩设计（微晶防眩等）"
+
+[fields.light_module.integrated]
+type = "boolean"
+required = false
+description = "是否一体式灯具"
+
+# ============================================================
+# 电源模组
+# ============================================================
+[fields.power_module]
+description = "电源驱动模组"
+
+[fields.power_module.type]
+type = "string"
+required = true
+enum = ["constant_current", "dimmable", "dali", "flicker_free_dimmable"]
+description = "驱动类型（教室灯推荐 flicker_free_dimmable 无频闪调光）"
+
+[fields.power_module.dimming_range]
+type = "object"
+required = false
+fields = [
+    { name = "min", type = "number", unit = "%" },
+    { name = "max", type = "number", unit = "%" },
+]
+
+[fields.power_module.dimming_levels]
+type = "number"
+required = false
+description = "离散调光档位数（有限档位调光时填写）"
+
+# ============================================================
+# 传感模组
+# ============================================================
+[fields.sensor_module]
+description = "传感器模组"
+
+[fields.sensor_module.type]
+type = "string"
+required = false
+enum = ["radar_5.8G", "radar_10G", "pir", "none"]
+description = "传感器类型"
+
+[fields.sensor_module.presence_type]
+type = "string"
+required = false
+enum = ["existence", "motion"]
+description = "存在型(existence)可检测静止人体；移动型(motion)仅检测运动"
+
+[fields.sensor_module.light_sensor]
+type = "boolean"
+required = false
+description = "是否含光照传感器（恒照度控制）"
+
+# ============================================================
+# 通信模组
+# ============================================================
+[fields.communication_module]
+description = "通信模组"
+
+[fields.communication_module.uplink]
+type = "array"
+required = false
+item_type = "string"
+enum = ["4G", "5G", "ethernet", "wi-fi", "none"]
+
+[fields.communication_module.downlink]
+type = "array"
+required = false
+item_type = "string"
+enum = ["rs-485", "lora", "zigbee", "ethernet", "none"]
+
+[fields.communication_module.protocols]
+type = "object"
+required = false
+fields = [
+    { name = "industrial", type = "array", required = false, item_type = "string" },
+]
+
+# ============================================================
+# 控制模组
+# ============================================================
+[fields.control_module]
+description = "控制模组"
+
+[fields.control_module.features]
+type = "array"
+required = false
+item_type = "string"
+description = "控制特性列表（dimming/zone/schedule/gradual 等）"
+
+[fields.control_module.encryption]
+type = "boolean"
+required = false
+default = false
+
+# ============================================================
+# 认证（健康照明关键字段）
+# ============================================================
+[fields.certification]
+description = "认证与合规"
+
+[fields.certification.ccc]
+type = "boolean"
+required = true
+description = "CCC 认证"
+
+[fields.certification.blue_light_rating]
+type = "string"
+required = true
+enum = ["RG0", "RG1", "RG2"]
+description = "蓝光危害等级（RG0=无危险）"
+
+[fields.certification.flicker_rating]
+type = "string"
+required = true
+enum = ["无显著影响", "无危害类", "有影响"]
+description = "频闪认证结果"
+
+[fields.certification.report_available]
+type = "boolean"
+required = false
+description = "CMA/CNAS 检测报告是否已取得"
+
+# ============================================================
+# 环境适应性
+# ============================================================
+[fields.environment]
+description = "环境适应性"
+
+[fields.environment.temp_range]
+type = "object"
+required = true
+fields = [
+    { name = "min", type = "number", unit = "C" },
+    { name = "max", type = "number", unit = "C" },
+]
+
+[fields.environment.ip_ratings]
+type = "array"
+required = false
+item_type = "string"
+description = "防护等级列表"

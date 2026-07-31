@@ -1,0 +1,80 @@
+[scene]
+id = "cold_storage"
+name = "冷库/冷链"
+description = "低温仓储照明，-20℃~-40℃ 极端环境，感应联动"
+priority = "P1"
+
+[hard_constraints]
+
+[[hard_constraints.items]]
+field = "environment.temp_range.min"
+op = "lte"
+value = -20
+comment = "冷库工作温度需 ≤-20℃"
+
+[[hard_constraints.items]]
+field = "sensor_module.type"
+op = "ne"
+value = "none"
+comment = "冷库需要感应，减少人员停留时间"
+
+[[hard_constraints.items]]
+field = "environment.ip_ratings"
+op = "contains_any"
+value = ["IP65", "IP66", "IP67"]
+comment = "冷库凝露环境，防护等级需 IP65+"
+
+[soft_scoring]
+
+[soft_scoring.dimensions.temp_margin]
+weight = 0.30
+comment = "温度余量：BOM 最低温越低越好"
+
+[soft_scoring.dimensions.temp_margin.scoring]
+type = "range"
+field = "environment.temp_range.min"
+ideal_min = -999
+ideal_max = -30
+slope = 10
+comment = "≤-30℃ 满分，每高 10℃ 降分"
+
+[soft_scoring.dimensions.ip_match]
+weight = 0.25
+comment = "IP 防护等级"
+
+[soft_scoring.dimensions.ip_match.scoring]
+type = "ip_minimum"
+field = "environment.ip_ratings"
+minimum_ip = "IP66"
+score_per_level_above = 0.05
+
+[soft_scoring.dimensions.sensor_match]
+weight = 0.20
+comment = "冷库传感器需抗低温"
+
+[soft_scoring.dimensions.sensor_match.scoring]
+type = "enum_exact"
+field = "sensor_module.type"
+mapping = { "radar_5.8G" = 1.0, "radar_10G" = 1.0, microwave = 0.8, pir = 0.2 }
+
+[soft_scoring.dimensions.communication_match]
+weight = 0.15
+comment = "冷库环境通信（温度波动小，LoRa/有线优先）"
+
+[soft_scoring.dimensions.communication_match.scoring]
+type = "enum_intersect"
+field = "communication_module.downlink"
+ideal = ["lora", "rs-485", "ethernet"]
+mapping = { lora = 1.0, rs_485 = 0.9, ethernet = 0.8, zigbee = 0.4 }
+mode = "max"
+
+[soft_scoring.dimensions.power_match]
+weight = 0.10
+comment = "冷库灯管功率 10-15W 常见"
+
+[soft_scoring.dimensions.power_match.scoring]
+type = "range"
+field = "product_specs.power.nominal"
+ideal_min = 10
+ideal_max = 15
+slope = 5

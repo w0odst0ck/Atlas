@@ -1,0 +1,94 @@
+[scene]
+id = "cleanroom"
+name = "洁净车间/洁净室"
+description = "电子/医药/食品洁净车间，需高显色、高防护、无尘设计"
+priority = "P2"
+
+[hard_constraints]
+
+[[hard_constraints.items]]
+field = "product_specs.efficacy.value"
+op = "gte"
+value = 120
+comment = "洁净间基础光效要求"
+
+[[hard_constraints.items]]
+field = "environment.ip_ratings"
+op = "contains_any"
+value = ["IP54", "IP65", "IP66", "IP67"]
+comment = "洁净间需 ≥IP54"
+
+[[hard_constraints.items]]
+field = "sensor_module.type"
+op = "ne"
+value = "none"
+comment = "洁净间需要感应避免接触开关"
+
+[[hard_constraints.items]]
+field = "control_module.no_neutral_wire"
+op = "eq"
+value = true
+comment = "洁净间改造方案需免布线"
+
+[soft_scoring]
+
+[soft_scoring.dimensions.ra_match]
+weight = 0.30
+comment = "显色指数匹配（洁净间要求 Ra ≥ 80）"
+
+[soft_scoring.dimensions.ra_match.scoring]
+type = "range"
+field = "product_specs.ra"
+ideal_min = 80
+ideal_max = 100
+slope = 10
+
+[soft_scoring.dimensions.ip_match]
+weight = 0.20
+comment = "防护等级"
+
+[soft_scoring.dimensions.ip_match.scoring]
+type = "ip_minimum"
+field = "environment.ip_ratings"
+minimum_ip = "IP54"
+score_per_level_above = 0.05
+
+[soft_scoring.dimensions.efficacy_match]
+weight = 0.15
+comment = "光效匹配"
+
+[soft_scoring.dimensions.efficacy_match.scoring]
+type = "range"
+field = "product_specs.efficacy.value"
+ideal_min = 150
+ideal_max = 999
+slope = 30
+
+[soft_scoring.dimensions.sensor_match]
+weight = 0.15
+comment = "传感器匹配"
+
+[soft_scoring.dimensions.sensor_match.scoring]
+type = "enum_exact"
+field = "sensor_module.type"
+mapping = { "radar_5.8G" = 1.0, "radar_10G" = 0.8, microwave = 0.6, pir = 0.5 }
+
+[soft_scoring.dimensions.communication_match]
+weight = 0.10
+comment = "洁净间通信（有线优先减少干扰）"
+
+[soft_scoring.dimensions.communication_match.scoring]
+type = "enum_intersect"
+field = "communication_module.downlink"
+ideal = ["rs-485", "ethernet"]
+mapping = { rs_485 = 1.0, ethernet = 1.0, lora = 0.5, zigbee = 0.5 }
+mode = "max"
+
+[soft_scoring.dimensions.installation_match]
+weight = 0.10
+comment = "安装便利度"
+
+[soft_scoring.dimensions.installation_match.scoring]
+type = "boolean_fields"
+fields = ["control_module.no_neutral_wire"]
+score_per_match = 1.0

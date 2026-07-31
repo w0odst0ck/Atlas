@@ -1,0 +1,24 @@
+__pycache__/
+venv/
+.DS_Store
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.toml.bak
+
+# refs 二进制素材不入库（文本类入库，图片/PDF 仅存公司电脑本地）
+refs/**/*.pdf
+refs/**/*.png
+refs/**/*.jpg
+refs/**/*.jpeg
+refs/**/*.gif
+refs/**/*.webp
+refs/**/*.bmp
+refs/**/*.zip
+refs/**/*.rar
+refs/**/*.7z
+
+# Obsidian 本地状态（每机不同，不入库）
+.obsidian/workspace.json

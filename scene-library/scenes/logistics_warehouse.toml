@@ -1,0 +1,96 @@
+[scene]
+id = "logistics_warehouse"
+name = "物流仓储"
+description = "高天棚仓储照明，远距离通信、高光效、分区管理、IP67 可选"
+priority = "P0"
+
+[hard_constraints]
+
+[[hard_constraints.items]]
+field = "product_specs.efficacy.value"
+op = "gte"
+value = 160
+comment = "仓储要求高光效 ≥160LM/W"
+
+[[hard_constraints.items]]
+field = "sensor_module.type"
+op = "in"
+value = ["radar_5.8G", "radar_10G", "microwave"]
+comment = "高天棚场景需要长距雷达"
+
+[[hard_constraints.items]]
+field = "communication_module.protocols.distance.max"
+op = "gte"
+value = 100
+comment = "仓储大面积，通信距离需 ≥100m"
+
+[[hard_constraints.items]]
+field = "control_module.no_neutral_wire"
+op = "eq"
+value = true
+comment = "改造场景必须免布线"
+
+[soft_scoring]
+
+[soft_scoring.dimensions.communication_range_match]
+weight = 0.25
+comment = "通信距离匹配"
+
+[soft_scoring.dimensions.communication_range_match.scoring]
+type = "range"
+field = "communication_module.protocols.distance.max"
+ideal_min = 150
+ideal_max = 999
+slope = 50
+
+[soft_scoring.dimensions.efficacy_match]
+weight = 0.20
+comment = "光效匹配"
+
+[soft_scoring.dimensions.efficacy_match.scoring]
+type = "range"
+field = "product_specs.efficacy.value"
+ideal_min = 170
+ideal_max = 999
+slope = 15
+
+[soft_scoring.dimensions.environment_match]
+weight = 0.20
+comment = "IP 防护匹配"
+
+[soft_scoring.dimensions.environment_match.scoring]
+type = "ip_minimum"
+field = "environment.ip_ratings"
+minimum_ip = "IP54"
+score_per_level_above = 0.10
+
+[soft_scoring.dimensions.sensor_match]
+weight = 0.15
+comment = "传感器匹配"
+
+[soft_scoring.dimensions.sensor_match.scoring]
+type = "enum_exact"
+field = "sensor_module.type"
+mapping = { "radar_5.8G" = 1.0, "radar_10G" = 1.0, microwave = 0.9, pir = 0.2 }
+
+[soft_scoring.dimensions.communication_downlink]
+weight = 0.10
+comment = "下行通信匹配"
+
+[soft_scoring.dimensions.communication_downlink.scoring]
+type = "enum_intersect"
+field = "communication_module.downlink"
+ideal = ["lora", "zigbee"]
+mapping = { lora = 1.0, zigbee = 0.8, rs_485 = 0.5, ethernet = 0.6 }
+mode = "max"
+
+[soft_scoring.dimensions.protocol_match]
+weight = 0.10
+comment = "协议匹配"
+
+[soft_scoring.dimensions.protocol_match.scoring]
+type = "enum_intersect"
+field = "communication_module.protocols.industrial"
+ideal = ["modbus"]
+mapping = { modbus = 1.0, opc_ua = 0.9, siemens_plc = 0.6, mitsubishi_plc = 0.6 }
+mode = "max"

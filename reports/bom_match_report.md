@@ -1,9 +1,9 @@
-> 溯源: Atlas scene-library @ `9251f36`（run_match.sh 自动生成）
+> 溯源: Atlas scene-library @ `3bd86ea`（run_match.sh 自动生成）
 
 # BOM 场景匹配报告
 
 **产品**: 智能IoT雷达感应灯管
-**生成时间**: 2026-07-31 22:36
+**生成时间**: 2026-07-31 23:00
 
 ---
 

@@ -31,7 +31,7 @@
 | PWM | 示波器看到波形变化，理解占空比/频率 |
 | UART | loopback 自发自收，理解波特率/帧格式 |
 | I2C | 读 MPU6050（六轴 IMU，Wokwi 无 BME280） |
-| 架构认知 | 五层总图 + ADR 决策记录（`../../Forge/w1/architecture/`） |
+| 架构认知 | 五层总图 + ADR 决策记录（`../learning/w1/architecture/`） |
 
 ### 课程资料
 | 资料 | 类型 | 链接/位置 |
@@ -42,7 +42,7 @@
 
 ### 验收
 W1 六天任务全过（`tech-plans/4week-awakening.md`），产出复盘笔记。
-任务表/进度看板 → `../../Forge/w1/README.md`（状态在 F 仓，A 仓为设计基线）
+任务表/进度看板 → `../learning/w1/README.md`（A 仓学习域）
 
 ---
 

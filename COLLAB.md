@@ -30,43 +30,44 @@
 
 ## 双仓定位
 
-| | Atlas（轻文档） | Forge（工程） |
+| | Atlas（文档仓） | Forge（工程仓） |
 |---|---|---|
-| 内容 | 计划/课纲/方案/场景库/知识 | 训练包/引擎/仿真/架构/进度 |
-| 性质 | **设计基线**：定稿后基本不动 | **执行环境**：高频变更 |
-| 变更 | 仅「纠错回流」+ 里程碑 | 一切动态都在此 |
+| 内容 | 方案/计划/课纲/场景库/学习材料（`learning/`） | 引擎/实验代码（`labs/`）/脚本/仿真 |
+| 性质 | **文档域**：学习看板动态 + 基线稳定 | **工程域**：代码/仿真动态 |
+| 变更 | 学习域看板随进度更新；计划仅纠错回流 + 里程碑 | 一切工程动态 |
 
 ---
 
 ## 双仓同步协议
 
-### 回流二分法（核心）
+### 回流规则（按域）
 
 ```
 纠错回流（回 A）：F 发现基线技术细节不成立（如 BME280→MPU6050）→ 当日修 A 计划文档
-状态回流（不回 A）：进度/看板/掌握度 → 留在 F，A 仓只用链接查看
+状态回流（按域）：学习域进度（看板/掌握度）在 A `learning/w1/README.md`；工程域状态在 F
 ```
 
 ### 同步触发（三种）
 
-1. **每完成一个 D**（用户确认）→ F 看板更新 + 概念卡进 `w1/study-cards.md`
-2. **技术决策变更** → F 记 ADR（含「影响文件」字段）+ 当日纠错回流 A
+1. **每完成一个 D**（用户确认）→ A 看板更新 + 概念卡进 `learning/w1/study-cards.md`
+2. **技术决策变更** → A 记 ADR（`learning/w1/architecture/ADR.md`，含「影响文件」字段）+ 当日纠错回流
 3. **里程碑/周复盘**（D7、W1 完成）→ 双向核对一致性
 
 ### 互链清单（只链接，不复制内容）
 
 | A 侧 | F 侧 | 关系 |
 |------|------|------|
-| `tech-plans/4week-awakening.md` | `w1/README.md` | 计划 ↔ 实现（含进度看板） |
-| `plan/courses.md`（A 层） | `w1/architecture/00-system-overview.md` | 课纲 ↔ 架构认知 |
+| `tech-plans/4week-awakening.md` | `learning/w1/README.md`（A 内互链） | 计划 ↔ 学习看板 |
+| `learning/w1/D*/README.md` | `labs/w1/D*/` | 学习指引 ↔ 实验代码 |
+| `plan/courses.md`（A 层） | `learning/w1/architecture/`（A 内互链） | 课纲 ↔ 架构认知 |
 | `COLLAB.md` | `../Atlas/COLLAB.md` | 协作手册（A 为源） |
 | `scene-library/` | `engine/` | 场景定义（F 只读） |
 | `reports/` | `scripts/run_match.sh` | 仿真报告回传 |
 
 ### 一致性自查（每 D 完成时）
 
-- [ ] A 计划技术细节 = F 实现？（变更即查）
-- [ ] 互链路径有效？（跑 `Forge/scripts/verify-links.sh`）
+- [ ] A 计划技术细节 = 学习域实现？（变更即查）
+- [ ] 互链路径有效 + 文档/代码对称？（跑 `Forge/scripts/verify-links.sh`）
 
 ---
 

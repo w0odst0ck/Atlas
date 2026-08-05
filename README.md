@@ -7,7 +7,7 @@
 
 ## 双项目协作
 
-本项目（`Atlas`）与 [`Forge`](D:\projects\Forge)（仿真实验室）成对工作：
+本项目（`Atlas`）与 [`Forge`](../Forge)（仿真实验室）成对工作：
 
 | | Atlas（本仓） | Forge（仿真仓） |
 |---|---|---|

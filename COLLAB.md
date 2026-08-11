@@ -39,11 +39,11 @@
 ## 学习模式（互动式陪伴学习）
 
 > 机制见 OpenClaw skill `pair-learning` v2（2026-08-11 整合 interactive-learning 后统一维护；先讲→检验→点评→沉淀）
-> ⚠️ W1 过渡期：复习本仍用 notes.md 单文件（旧体系），**W2 起切 pair-learning 三文件体系**（手册/quiz/review + checklist）
+> ✅ W1 已切三文件体系（2026-08-11，不等 W2）：手册/quiz/review + checklist
 
 - **互动循环**：一个知识点 → 先讲（一句话本质→详细→类比）→ 检验（开放问题）→ 点评（肯定→精确化→纠正→记忆点）→ 沉淀
-- **复习本**：`learning/w{N}/notes.md` 单文件聚合（`<details>` 折叠自测 + 📌 易错点冲刺区 + 概念回链 + 自评），每 W 一文件
-- **概念卡**：`study-cards.md`（标准定义通道，复习本 = 自测通道，职责分离）
+- **三文件**：`learning/w{N}/W{N}-{主题}.md` 手册（知识点/误解纠正/钩子池/总览图）+ `W{N}-quiz.md` 复习手稿（原答/批改/折叠自测）+ `W{N}-review.md` 复盘；复习调度 = `learning/review-checklist.md`（1/3/7 轮，全阶段共享）
+- **概念卡**：`study-cards.md`（标准定义通道，可选保留）
 - **看板**：掌握度看板 `learning/w{N}/README.md`，每 D 完成时 Agent 更新
 
 ---

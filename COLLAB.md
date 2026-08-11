@@ -38,7 +38,8 @@
 
 ## 学习模式（互动式陪伴学习）
 
-> 机制见 OpenClaw skill `interactive-learning`（先讲→检验→点评→沉淀，一次一个知识点）
+> 机制见 OpenClaw skill `pair-learning` v2（2026-08-11 整合 interactive-learning 后统一维护；先讲→检验→点评→沉淀）
+> ⚠️ W1 过渡期：复习本仍用 notes.md 单文件（旧体系），**W2 起切 pair-learning 三文件体系**（手册/quiz/review + checklist）
 
 - **互动循环**：一个知识点 → 先讲（一句话本质→详细→类比）→ 检验（开放问题）→ 点评（肯定→精确化→纠正→记忆点）→ 沉淀
 - **复习本**：`learning/w{N}/notes.md` 单文件聚合（`<details>` 折叠自测 + 📌 易错点冲刺区 + 概念回链 + 自评），每 W 一文件

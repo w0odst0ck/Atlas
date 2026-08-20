@@ -10,8 +10,8 @@ depends-on: D1-blink
 
 ## 操作步骤
 
-1. F 仓 `../../../../Forge/labs/w1/D2-interrupt/sketch.ino` 内容粘贴到 Wokwi 代码编辑器
-2. F 仓 `../../../../Forge/labs/w1/D2-interrupt/diagram.json` 内容粘贴生成电路：ESP32 + 按键（D4 ── 按键 ── GND）
+1. F 仓文件 `projects/Forge/labs/w1/D2-interrupt/sketch.ino` 内容粘贴到 Wokwi 代码编辑器
+2. F 仓文件 `projects/Forge/labs/w1/D2-interrupt/diagram.json` 内容粘贴生成电路：ESP32 + 按键（D4 ── 按键 ── GND）
 3. 点 ▶ 运行，Serial Monitor 看到 `Ready. Press the button!`
 4. 点击仿真里的按键（或键盘 1）：每次按下打印一行 `Button pressed! (debounced)`
 5. 快速连按：不会出现"一次按下打印两行"的抖动误触发
